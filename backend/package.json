@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "na": "nodemon srever.js"
+    "na": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
