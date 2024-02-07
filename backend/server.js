@@ -7,7 +7,7 @@ const port = 2003;
 
 mongoose.set("strictQuery", false);
 mongoose
-    .connect(DB1)
+    .connect(DB)
     .then(() => {
         console.log('Database connected successfully!');
         app.listen(port , () => {
