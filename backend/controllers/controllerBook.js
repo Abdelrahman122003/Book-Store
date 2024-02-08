@@ -20,12 +20,12 @@ const showBooks = async (req, res, next) => {
 
 const deleteBook = async (req, res, next) => {
   await Book.deleteOne({ ISBN: req.params.ISBN });
-  res.status(204).send('Deleted Successfullly!');
+  res.status(204).json();
 };
 
 const editBook = async (req, res, next) => {
-  await Book.updateOne({ISBN: req.params.ISBN} , req.body);
-  const book = await Book.findOne({ISBN: req.params.ISBN});
+  await Book.updateOne({ ISBN: req.params.ISBN }, req.body);
+  const book = await Book.findOne({ ISBN: req.params.ISBN });
   //   200 --> okay
   res.status(200).json(book);
 };
