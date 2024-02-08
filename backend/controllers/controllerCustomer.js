@@ -24,7 +24,7 @@ const editCustomer = async (req, res, next) => {
 
 // delete customer
 const deleteCustomer = async (req, res, next) => {
-  await Customer.delete({ username: req.params.username });
+  await Customer.deleteOne({ username: req.params.username });
   res.status(204).json();
 };
 
@@ -34,4 +34,10 @@ const getCustomerWithUsername = async (req, res, next) => {
   res.status(200).json(customer);
 };
 
-module.exports = { addCustomer, showCustomers, editCustomer, deleteCustomer };
+module.exports = { 
+  addCustomer, 
+  showCustomers, 
+  editCustomer, 
+  deleteCustomer , 
+  getCustomerWithUsername 
+};
