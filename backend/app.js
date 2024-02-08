@@ -1,6 +1,10 @@
 const express = require("express");
+const bodyParser = require('body-parser');
 const bookRouter = require("../backend/routes/bookRouter");
 const app = express();
+app.use(bodyParser.json());
 app.use("/api/books", bookRouter);
-app.use(express.json);
+// app.use(bodyParser.urlencoded({extended: true}));
+// app.use(express.bodyParser());
+app.use(express.json());
 module.exports = app;
