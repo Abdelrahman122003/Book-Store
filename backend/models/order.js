@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 const orderSchema = mongoose.Schema({
-  status: String,
-  date: Date,
-  totalPayment: Number,
-  role: String,
+  status: { type: String, required: true },
+  date: { type: Date, required: true },
+  // calc by method
+  totalPayment: { type: Number, required: true },
+  // role , photo ???????
+  role: { type: String, required: true },
   photo: String,
 });
 
