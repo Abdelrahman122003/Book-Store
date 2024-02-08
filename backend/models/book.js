@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const bookSchema = mongoose.Schema({
-  name: String,
-  price: Number,
-  amount: Number,
-  author: String,
+  name: {type: String , required: true},
+  price: {type: Number , required: true},
+  amount: {type: Number , default: 1},
+  author: {typr: String , required: true},
   //   serial number for this book
-  ISBN: String,
-  pages: Number,
-  cover: String,
-  category: String,
-  rate: Number,
+  ISBN: {typr: String , required: true , unique: true},
+  pages: {type: Number , required: true},
+  cover: {type: String , required: true},
+  category: {type: String , required: true},
+  rate: {type: Number , default: 1},
 });
 
 const book = mongoose.model("bookDB", bookSchema);
