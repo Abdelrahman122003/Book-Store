@@ -6,11 +6,28 @@ const express = require("express");
 // async ---> do not wait for resulting
 const addBook = async (req, res, next) => {
   console.log(req.body);
-  const newBook = await Book.create(req.body)
+  const newBook = await Book.create(req.body);
   // await --> saving first then continue
   await newBook.save();
   res.status(201).json(newBook);
   // res.send('hi fucking server api!');
 };
+const showBooks = async (req, res, next) => {
+  const books = await Book.find();
+  res.status(200).json(books);
+};
 
-module.exports = { addBook };
+const deleteBook = async (req, res, next) => {
+  await Book.deleteOne({ ISBN: req.params.ISBN });
+  res.status(204);
+};
+const editBook = async (req, res, next) => {
+  const book = await Book.updateOne({ ISBN: req.params.ISBN }, req.body);
+  //   200 --> okay
+  res.status(200).json(book);
+};
+const getBookByISBN = async (req, res, next) => {
+  const book = await Book.findOne({ ISBN: req.params.ISBN });
+  res.status(200).json(book);
+};
+module.exports = { addBook, showBooks, deleteBook, editBook, getBookByISBN };
