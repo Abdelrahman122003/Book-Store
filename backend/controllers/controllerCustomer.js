@@ -4,7 +4,7 @@ const express = require("express");
 // add customer --> register
 const addCustomer = async (req, res, next) => {
   const newCustomer = await Customer.create(req.body);
-  newCustomer.save();
+  await newCustomer.save();
   res.status(201).json(newCustomer);
 };
 
@@ -34,10 +34,10 @@ const getCustomerWithUsername = async (req, res, next) => {
   res.status(200).json(customer);
 };
 
-module.exports = { 
-  addCustomer, 
-  showCustomers, 
-  editCustomer, 
-  deleteCustomer , 
-  getCustomerWithUsername 
+module.exports = {
+  addCustomer,
+  showCustomers,
+  editCustomer,
+  deleteCustomer,
+  getCustomerWithUsername,
 };
