@@ -19,9 +19,11 @@ const deleteOrder = async (req, res, next) => {
   await Order.findByIdAndDelete(req.params.orderId);
   res.status(204).json();
 };
+
 // show orders
 const showOrders = async (req, res, next) => {
   const Orders = await Order.find();
   res.status(200).json(Orders);
 };
+
 module.exports = { addOrder, deleteOrder, showOrders };
