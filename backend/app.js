@@ -5,6 +5,12 @@ const customerRouter = require("./routes/customerRouter");
 const orderRouter = require("./routes/orderRouter");
 const app = express();
 app.use(bodyParser.json());
+
+// // middleware for print
+// app.use((req, res, next) => {
+//   console.log(req.headers);
+//   next();
+// });
 app.use("/api/books", bookRouter);
 app.use("/api/customers", customerRouter);
 app.use("/api/orders", orderRouter);
