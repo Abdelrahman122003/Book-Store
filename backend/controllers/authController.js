@@ -1,7 +1,8 @@
+require("dotenv").config();
+const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
 const Customer = require("../models/customer");
 const catchAsync = require("../utilities/catchAsync");
-const appError = require("../utilities/appError");
 const AppError = require("../utilities/appError");
 
 const signToken = (id) => {
@@ -49,23 +50,28 @@ exports.login = catchAsync(async (req, res, next) => {
 
 exports.protect = catchAsync(async (req, res, next) => {
   let token;
+  console.log("start  : " + process.env);
   // Getting token and check if it is there
   if (
     req.headers.authorization &&
-    req.headers.authorization.startsWith("B_S")
+    req.headers.authorization.startsWith("Bearer")
   ) {
-    token = req.headers.authorization.split("  ")[1];
+    token = req.headers.authorization.split(" ")[1];
   }
 
-  console.log("Token: " + token);
   if (!token) {
     return next(
       new AppError("You are not logged in! Please log in to get access"),
       401
     );
   }
+  console.log("token : " + token);
   // Verification token
-
+  const decode = await promisify(jwt.verify)(
+    token,
+    "my-ultra-secure-and-ultra-long-secret"
+  );
+  console.log("decode Token: " + decode);
   // check if user still exists
 
   // check if user changed password after token was issued
