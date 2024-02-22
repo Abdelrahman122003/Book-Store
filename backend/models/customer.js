@@ -22,7 +22,12 @@ const customerSchema = mongoose.Schema({
     minlength: 8,
     select: false,
   },
-  role: { type: String, required: true },
+  role: {
+    type: String,
+    required: true,
+    enum: ["customer", "admin"],
+    default: "customer",
+  },
   // link(photo) for book
   photo: { type: String, default: "" },
 

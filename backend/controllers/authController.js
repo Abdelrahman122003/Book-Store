@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config(); //this for read const from dotenv
 const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
 const Customer = require("../models/customer");
@@ -6,8 +6,8 @@ const catchAsync = require("../utilities/catchAsync");
 const AppError = require("../utilities/appError");
 
 const signToken = (id) => {
-  return jwt.sign({ id }, "my-ultra-secure-and-ultra-long-secret", {
-    expiresIn: "90d",
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN,
   });
 };
 
@@ -44,14 +44,15 @@ exports.login = catchAsync(async (req, res, next) => {
   const token = signToken(customer._id);
   res.status(200).json({
     status: "Success",
+    customerId: customer._id,
     token,
   });
 });
 
+//** Authentication
 exports.protect = catchAsync(async (req, res, next) => {
   let token;
-  console.log("start  : " + process.env);
-  // Getting token and check if it is there
+  //1)Getting token and check if it is there
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
@@ -65,16 +66,35 @@ exports.protect = catchAsync(async (req, res, next) => {
       401
     );
   }
-  console.log("token : " + token);
-  // Verification token
-  const decode = await promisify(jwt.verify)(
-    token,
-    "my-ultra-secure-and-ultra-long-secret"
-  );
-  console.log("decode Token: " + decode);
-  // check if user still exists
+  //2)Verification token
+  const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-  // check if user changed password after token was issued
-
+  //3)check if user still exists
+  const currentUser = await User.findById(decoded.id);
+  if (!currentUser) {
+    return next(
+      new AppError(
+        "The user belonging to this token does no longer exist.",
+        401
+      )
+    );
+  }
+  // 4) Check if user changed password after the token was issued
+  // req.user = currentUser;
   next();
 });
+
+//** Authorization
+// to restrict access for specific methods or functions
+
+exports.restrictTo = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new AppError(" You do not have permission to perform this action", 403)
+      );
+    }
+    // otherwise next
+    next();
+  };
+};

@@ -4,8 +4,8 @@ const controllerBook = require("../controllers/controllerBook");
 const checkNullsBody = require("../middlewares/checkNulls");
 // const {nullISBN} = require("../middlewares/checkNullsParam")
 const authController = require("../controllers/authController");
-// param in link ----> get, updatesd
-// requset body  ----> post, update
+// param in link ----> get, updated
+// request body  ----> post, update
 routerBook.route("/addBook").post(checkNullsBody, controllerBook.addBook);
 routerBook
   .route("/showBooks")
