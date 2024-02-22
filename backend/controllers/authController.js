@@ -33,7 +33,7 @@ exports.login = catchAsync(async (req, res, next) => {
   //  check if username is exist and password is correct.
   const customer = await Customer.findOne({ username }).select("+password");
   const correct = await customer.correctPassword(password, customer.password);
-  console.log(correct + "  " + customer);
+  // console.log(correct + "  " + customer);
   if (!customer || !correct) {
     return next(new AppError("Incorrect username or password", 401));
   }
@@ -50,27 +50,28 @@ exports.login = catchAsync(async (req, res, next) => {
 });
 
 //** Authentication
+// this function check if this customer logged in or no.
 exports.protect = catchAsync(async (req, res, next) => {
   let token;
   //1)Getting token and check if it is there
+  // console.log("from protect : " + req.headers.authorization);
   if (
     req.headers.authorization &&
-    req.headers.authorization.startsWith("Bearer")
+    req.headers.authorization.startsWith("Bearer")Ak
   ) {
     token = req.headers.authorization.split(" ")[1];
   }
 
   if (!token) {
     return next(
-      new AppError("You are not logged in! Please log in to get access"),
-      401
+      new AppError("You are not logged in! Please log in to get access", 401)
     );
   }
   //2)Verification token
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
   //3)check if user still exists
-  const currentUser = await User.findById(decoded.id);
+  const currentUser = await Customer.findById(decoded.id);
   if (!currentUser) {
     return next(
       new AppError(
@@ -79,8 +80,16 @@ exports.protect = catchAsync(async (req, res, next) => {
       )
     );
   }
+
   // 4) Check if user changed password after the token was issued
-  // req.user = currentUser;
+  //*** I am not understand this case
+  if (currentUser.changedPasswordAfter(decoded.iat)) {
+    return next(
+      new AppError("User recently changed password! Please log in again.", 401)
+    );
+  }
+  // Grant access to protected route
+  req.user = currentUser;
   next();
 });
 

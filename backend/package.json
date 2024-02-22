@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "na": "nodemon server.js"
+    "start": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +22,8 @@
     "nodemon": "^3.0.3",
     "util": "^0.12.5",
     "validator": "^13.11.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
