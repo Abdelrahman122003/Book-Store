@@ -1,6 +1,8 @@
 const app = require("./app");
+const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
+dotenv.config({ path: "./config.env" });
 const DB =
   "mongodb+srv://mostafa3132004:DuXaxkJrP8RGuXR2@cluster0.tyo186d.mongodb.net/novelnest";
 const port = 2003;

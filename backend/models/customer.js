@@ -65,13 +65,14 @@ customerSchema.methods.correctPassword = async function (
   return await bcrypt.compare(candidatePassword, customerPassword);
 };
 customerSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
+  const changedTimestamp = Math.floor(this.passwordChangedAt.getTime() / 1000);
+  // console.log("diff : ", changedTimestamp - JWTTimestamp);
   if (this.passwordChangedAt) {
-    const changeTime = parseInt(this.passwordChangedAt / 1000, 10);
-
-    // this to validate that user change password when he logged in.
-    console.log(changeTime, JWTTimestamp);
-    return JWTTimestamp < changeTime;
+    return JWTTimestamp < changedTimestamp;
   }
+
+  // False means NOT changed
+  return false;
 };
 const customer = mongoose.model("customerDB", customerSchema);
 

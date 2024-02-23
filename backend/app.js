@@ -8,10 +8,12 @@ const handlerErrorsAuto = require("./controllers/errorController");
 const app = express();
 app.use(bodyParser.json());
 
-// // middleware for print
-// app.use((req, res, next) => {
-//   console.log(req.headers);
-//   next();
+// app.use((err, req, res, next) => {
+//   // Handle the error
+//   res.status(err.statusCode || 500).json({
+//     status: err.status || "error",
+//     message: err.message,
+//   });
 // });
 app.use("/api/books", bookRouter);
 app.use("/api/customers", customerRouter);

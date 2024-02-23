@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config("../config.env");
 const appError = require("../utilities/appError");
 
 const handleJsonWebTokenError = () =>
@@ -39,7 +39,8 @@ const sendErrorProd = (err, res) => {
 module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "error";
-
+  console.log("type : " + process.env.JWT_SECRET);
+  console.log("Enter this abn >......");
   if (process.env.NODE_ENV === "development") {
     // console.log("enter dev")
     sendErrorDev(err, res);
