@@ -1,3 +1,4 @@
+const crypto = require("crypto");
 const mongoose = require("mongoose");
 // validator
 const validator = require("validator");
@@ -44,6 +45,8 @@ const customerSchema = mongoose.Schema({
     },
   },
   passwordChangedAt: Date,
+  passwordResetToken: String,
+  passwordResetExpires: Date,
 });
 customerSchema.pre("save", async function (next) {
   // this function works if password is changed.
@@ -73,6 +76,19 @@ customerSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
 
   // False means NOT changed
   return false;
+};
+
+customerSchema.methods.createPasswordResetToken = function () {
+  const resetToken = crypto.randomBytes(32).toString("hex");
+  this.passwordResetToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+  // console.log("resetToken : ", resetToken);
+  console.log(resetToken + "   " + this.passwordResetToken);
+  this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+
+  return resetToken;
 };
 const customer = mongoose.model("customerDB", customerSchema);
 
