@@ -60,6 +60,14 @@ customerSchema.pre("save", async function (next) {
   next();
 });
 
+customerSchema.pre("save", function (next) {
+  if (!this.isModified(this.password) || this.isNew) return next();
+
+  this.passwordChangedAt = Date.now() - 1000;
+
+  next();
+});
+
 // this method to compare password that not encrypted with password stored(encrypted)
 customerSchema.methods.correctPassword = async function (
   candidatePassword,
