@@ -1,4 +1,14 @@
 const Customer = require("../models/customer");
+const catchAsync = require("../utilities/catchAsync");
+const AppError = require("../utilities/appError");
+
+const filterObj = (obj, ...allowedFields) => {
+  const newObj = {};
+  Object.keys(obj).forEach((el) => {
+    if (allowedFields.includes(el)) newObj[el] = obj[el];
+  });
+  return newObj;
+};
 
 // add customer --> register
 const addCustomer = async (req, res, next) => {
@@ -9,16 +19,18 @@ const addCustomer = async (req, res, next) => {
       message: "Missing required fields.",
     });
   }
-  const customers = await Customer.find({$or: [{username: username} , {email: email}]});
+  const customers = await Customer.find({
+    $or: [{ username: username }, { email: email }],
+  });
   console.log(customers);
   if (customers.length !== 0) {
-    console.log('hi existing customer');
+    // console.log("hi existing customer");
     return res.status(400).json({
       status: "fail",
       message: `Customer exist!`,
-      data: {customers}
+      data: { customers },
     });
-  } 
+  }
   const newCustomer = await Customer.create(req.body);
   await newCustomer.save();
   res.status(201).json({
@@ -33,48 +45,46 @@ const showCustomers = async (req, res, next) => {
   const Customers = await Customer.find();
   res.status(200).json({
     status: "success",
+    results: Customers.length,
     data: { Customers },
   });
 };
 
 // edit customer
-const editCustomer = async (req, res, next) => {
-  const customer = await Customer.findOne({ username: req.params.username });
-  // check first if customer is found
-  if (!customer) {
-    return res.status(404).json({
-      status: "fail",
-      message: "Customer is not found",
-    });
+const editCustomer = catchAsync(async (req, res, next) => {
+  //1)not allow to update password, passwordConfirm and role.
+  if (req.body.password || req.body.confirmPassword) {
+    return next(
+      new AppError(
+        "This route is not for password updates. Please use /updateMyPassword",
+        400
+      )
+    );
   }
-  const { password, photo } = req.body;
-  if (password) customer.password = password;
-  if (photo) customer.photo = photo;
+  if (req.body.role) {
+    return next(new AppError("You can not change your role.", 400));
+  }
+  // we can not use save method because it is require (password and passwordConfirm)
+
+  // 2)filtered out unwanted fields names that are not allowed to be updated
+  const filteredBody = filterObj(req.body, "username", "email");
+
+  //3)update user document
+  const updatedCustomer = await Customer.findByIdAndUpdate(
+    req.user.id,
+    filteredBody,
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
   //   200 --> okay
-  await customer.save();
   res.status(200).json({
     status: "success",
     message: "Customer updated successfully",
-    data: { customer },
+    data: { user: updatedCustomer },
   });
-};
-
-// delete customer
-const deleteCustomer = async (req, res, next) => {
-  const customer = await Customer.findOne({ username: req.params.username });
-  // check if customer is exist or no
-  if (!customer) {
-    return res.status(404).json({
-      status: "fail",
-      message: "Customer not found",
-    });
-  }
-  await Customer.deleteOne({ username: req.params.username });
-  res.json({
-    status: "success",
-    message: "Customer deleted successfully",
-  });
-};
+});
 
 // get customer --> with username
 const getCustomerByUsername = async (req, res, next) => {
@@ -92,10 +102,21 @@ const getCustomerByUsername = async (req, res, next) => {
   });
 };
 
+const deleteMe = catchAsync(async (req, res, next) => {
+  await Customer.findByIdAndUpdate(req.user.id, {
+    active: false,
+  });
+
+  res.status(204).json({
+    status: "success",
+    data: null,
+  });
+});
+
 module.exports = {
   addCustomer,
   showCustomers,
   editCustomer,
-  deleteCustomer,
   getCustomerByUsername,
+  deleteMe,
 };

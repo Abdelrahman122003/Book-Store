@@ -47,6 +47,11 @@ const customerSchema = mongoose.Schema({
   passwordChangedAt: Date,
   passwordResetToken: String,
   passwordResetExpires: Date,
+  active: {
+    type: Boolean,
+    default: true,
+    select: false,
+  },
 });
 customerSchema.pre("save", async function (next) {
   // this function works if password is changed.
@@ -65,6 +70,12 @@ customerSchema.pre("save", function (next) {
 
   this.passwordChangedAt = Date.now() - 1000;
 
+  next();
+});
+customerSchema.pre(/^find/, function (next) {
+  // this method to get all customer that his pro active equal to false
+
+  this.find({ active: { $ne: false } });
   next();
 });
 

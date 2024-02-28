@@ -8,8 +8,19 @@ routerCustomer.route("/register").post(authController.signup);
 routerCustomer.route("/login").post(authController.login);
 routerCustomer.route("/forgetPassword").post(authController.forgetPassword);
 routerCustomer
+  .route("/updateMyPassword")
+  .patch(authController.protect, authController.updatePassword);
+routerCustomer
   .route("/resetPassword/:token")
   .patch(authController.resetPassword);
+routerCustomer
+  .route("/deleteMyAccount")
+  .delete(
+    authController.protect,
+    authController.restrictTo("customer"),
+    controllerCustomer.deleteMe
+  );
+
 routerCustomer
   .route("/addCustomer")
   .post(
@@ -18,22 +29,13 @@ routerCustomer
     authController.restrictTo("customer"),
     controllerCustomer.addCustomer
   );
+routerCustomer.route("/showCustomers").get(
+  // authController.protect,
+  // authController.restrictTo("customer"),
+  controllerCustomer.showCustomers
+);
 routerCustomer
-  .route("/showCustomers")
-  .get(
-    authController.protect,
-    authController.restrictTo("Admin"),
-    controllerCustomer.showCustomers
-  );
-routerCustomer
-  .route("/deleteCustomer/:username")
-  .delete(
-    authController.protect,
-    authController.restrictTo("customer"),
-    controllerCustomer.deleteCustomer
-  );
-routerCustomer
-  .route("/editCustomer/:username")
+  .route("/editCustomer")
   .patch(
     checkNulls,
     authController.protect,

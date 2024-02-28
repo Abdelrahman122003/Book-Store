@@ -14,20 +14,37 @@ const signToken = (id) => {
   });
 };
 
+const createSendJWTToken = (user, statusCode, res) => {
+  const token = signToken(user._id);
+
+  // create cookie and send it through http
+  const cookieOptions = {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true,
+  };
+  if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
+  res.cookie("jwt", token, cookieOptions);
+  // remove password from output
+  user.password = undefined;
+  res.status(200).json({
+    status: "Success",
+    token,
+    data: {
+      user,
+    },
+  });
+};
 exports.signup = catchAsync(async (req, res, next) => {
   const newCustomer = await Customer.create(req.body);
-  const token = signToken(newCustomer._id);
-  res.status(201).json({
-    status: "success",
-    token,
-    data: { user: newCustomer },
-  });
+  createSendJWTToken(newCustomer, 201, res);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
   const { username, password } = req.body;
 
-  console.log(".env : " + process.env.JWT_SECRET);
+  // console.log(".env : " + process.env.JWT_SECRET);
   if (!password || !username) {
     // console.log("i am here");
     return next(new AppError("Please provide username and password", 400));
@@ -39,14 +56,7 @@ exports.login = catchAsync(async (req, res, next) => {
   if (!customer || !correct) {
     return next(new AppError("Incorrect username or password", 401));
   }
-
-  //   if everything is ok, send token to client
-  const token = signToken(customer._id);
-  res.status(200).json({
-    status: "Success",
-    customerId: customer._id,
-    token,
-  });
+  createSendJWTToken(customer, 200, res);
 });
 
 //** Authentication
@@ -91,6 +101,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
   // Grant access to protected route
   req.user = currentUser;
+  // console.log("from protect function : ", currentUser._id);
   next();
 });
 
@@ -172,12 +183,29 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   passwordResetToken = undefined;
   passwordResetExpires = undefined;
   await user.save();
-  // 3) update changePasswordAt property for the user.
+  // 3) update changePasswordAt property for the user --> updated in customerSchema
+
   // 4)Log the user inm, wnd JWT.
-  const token = signToken(user._id);
-  res.status(200).json({
-    status: "Success",
-    customerId: user._id,
-    token,
-  });
+  createSendJWTToken(user, 200, res);
 });
+
+// update password function
+exports.updatePassword = async (req, res, next) => {
+  // 1)Get user by his id from collection
+  const user = await Customer.findById(req.user.id).select("+password");
+
+  // 2) Check If Posted current password is correct
+  if (!(await user.correctPassword(req.body.passwordCurrent, user.password))) {
+    return next(new AppError("In correct password or email", 401));
+  }
+
+  // update password
+  user.password = req.body.password;
+  user.confirmPassword = req.body.confirmPassword;
+
+  // save changes
+  await user.save();
+
+  // login again, send JWT token
+  createSendJWTToken(user, 200, res);
+};
