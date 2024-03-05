@@ -4,11 +4,28 @@ const Book = require("../models/book");
 // add book
 // async ---> do not wait for resulting
 const addBook = async (req, res, next) => {
-  const {name , price , author , ISBN , pages , cover , category} = req.body; 
-  if (!name || !price || !author || !ISBN || !pages || !cover || !category) {
+  // delete cover
+  const { name, price, author, ISBN, pages, category } = req.body;
+  if (!name || !price || !author || !ISBN || !pages || !category) {
     return res.status(400).json({
       status: "fail",
-      message: "Missing Required Field!"
+      message: "Missing Required Field!",
+    });
+  }
+  const getBookWSerialNum = await Book.findOne({ ISBN: ISBN });
+  // check if this serial number is unique or no
+  if (getBookWSerialNum) {
+    res.status(400).json({
+      status: "fail",
+      message:
+        "The serial number of this book has been used before. Please try again.",
+    });
+  }
+  const getBookName = await Book.findOne({ name: name });
+  if (getBookName) {
+    res.status(400).json({
+      status: "fail",
+      message: "The name of this book has been used before. Please try again.",
     });
   }
   const newBook = await Book.create(req.body);
@@ -17,7 +34,7 @@ const addBook = async (req, res, next) => {
   res.status(201).json({
     status: "success",
     message: "One Book Created!",
-    data: {newBook}
+    data: { newBook },
   });
 };
 
@@ -25,7 +42,7 @@ const showBooks = async (req, res, next) => {
   const books = await Book.find();
   res.status(200).json({
     status: "success",
-    data: {books}
+    data: { books },
   });
 };
 
@@ -35,58 +52,67 @@ const deleteBook = async (req, res, next) => {
   if (!book) {
     return res.status(404).json({
       status: "fail",
-      message: "Book not found!"
+      message: "Book not found!",
     });
   }
   await Book.deleteOne({ ISBN: req.params.ISBN });
   res.json({
-    status:  "success",
-    message: "One book deleted"
+    status: "success",
+    message: "One book deleted",
   });
 };
 
 const editBook = async (req, res, next) => {
   const book = await Book.findOne({ ISBN: req.params.ISBN });
   // check if book is exist first then update this book
-  if (!book){
+  if (!book) {
     return res.status(404).json({
-      status : "fail",
-      message : "Book not found!"
+      status: "fail",
+      message: "Book not found!",
     });
   }
   // update property that is not equal to null
-  const {name, price, amount, author, pages, cover, category , rate , numberOfPayments} = req.body;
-  if(name)book.name = name;
-  if(price) book.price = price;
-  if(amount) book.amount = amount;
-  if(author)book.author = author;
-  if(pages) book.pages = pages;
-  if(cover)book.cover = cover;
-  if(category)book.category = category;
-  if(amount)book.amount = amount;
-  if(rate)book.rate = rate;
-  if(numberOfPayments)book.numberOfPayments = numberOfPayments;
+  const {
+    name,
+    price,
+    amount,
+    author,
+    pages,
+    cover,
+    category,
+    rate,
+    numberOfPayments,
+  } = req.body;
+  if (name) book.name = name;
+  if (price) book.price = price;
+  if (amount) book.amount = amount;
+  if (author) book.author = author;
+  if (pages) book.pages = pages;
+  if (cover) book.cover = cover;
+  if (category) book.category = category;
+  if (amount) book.amount = amount;
+  if (rate) book.rate = rate;
+  if (numberOfPayments) book.numberOfPayments = numberOfPayments;
   await book.save();
   //   200 --> okay
   res.status(200).json({
     status: "success",
     message: "One Book Updated!",
-    data: {book}
+    data: { book },
   });
 };
 
 const getBookByISBN = async (req, res, next) => {
   const book = await Book.findOne({ ISBN: req.params.ISBN });
-  if(!book){
-    return res.status(404).json(
-      {
-        status: "fail",
-        message : "This is not vaild ISBN"
-      });
+  if (!book) {
+    return res.status(404).json({
+      status: "fail",
+      message: "This is not vaild ISBN",
+    });
   }
   res.status(200).json({
     status: "success",
-    data: {book}
+    data: { book },
   });
 };
 

@@ -4,7 +4,10 @@ const express = require("express");
 // make order
 const addOrder = async (req, res, next) => {
   let totalPayment = 0;
-  req.body.books.forEach(book => {
+  req.body.books.forEach((book) => {
+    console.log(req.body.books.serialNumber + " " + req.body.books.amount);
+  });
+  req.body.books.forEach((book) => {
     totalPayment += book.price;
   });
   let newOrder = await Order.create(req.body);
