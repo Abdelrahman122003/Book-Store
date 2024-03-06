@@ -92,13 +92,16 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   // 4) Check if user changed password after the token was issued
-  //*** I am not understand this case -----> not work
-  if (currentUser.changedPasswordAfter(decoded.iat)) {
-    // console.log("enter change password after case : ");
-    return next(
-      new AppError("User recently changed password! Please log in again.", 401)
-    );
-  }
+  //*** I am not understand this case -----> not work --->
+  //**  Issues arise when using protection in the API for books like add book(changePasswordAt)
+  // if(){
+  //   if (currentUser.changedPasswordAfter(decoded.iat)) {
+  //   // console.log("enter change password after case : ");
+  //   return next(
+  //     new AppError("User recently changed password! Please log in again.", 401)
+  //   );
+  // }
+  // }
   // Grant access to protected route
   req.user = currentUser;
   // console.log("from protect function : ", currentUser._id);

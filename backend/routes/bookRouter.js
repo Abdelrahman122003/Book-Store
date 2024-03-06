@@ -6,19 +6,17 @@ const checkNullsBody = require("../middlewares/checkNulls");
 const authController = require("../controllers/authController");
 // param in link ----> get, updated
 // request body  ----> post, update
-routerBook
-  .route("/addBook")
-  .post(
-    checkNullsBody,
-    authController.protect,
-    authController.restrictTo("Admin"),
-    controllerBook.addBook
-  );
+routerBook.route("/addBook").post(
+  // checkNullsBody,
+  authController.protect,
+  authController.restrictTo("Admin"),
+  controllerBook.addBook
+);
 routerBook
   .route("/showBooks")
   .get(
     authController.protect,
-    authController.restrictTo("customer"),
+    authController.restrictTo("Customer", "Admin"),
     controllerBook.showBooks
   );
 routerBook
@@ -40,7 +38,7 @@ routerBook
   .route("/getBookByISBN/:ISBN")
   .get(
     authController.protect,
-    authController.restrictTo("Admin", "customer"),
+    authController.restrictTo("Admin", "Customer"),
     controllerBook.getBookByISBN
   );
 

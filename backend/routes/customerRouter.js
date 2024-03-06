@@ -17,18 +17,10 @@ routerCustomer
   .route("/deleteMyAccount")
   .delete(
     authController.protect,
-    authController.restrictTo("customer"),
+    authController.restrictTo("Customer"),
     controllerCustomer.deleteMe
   );
 
-routerCustomer
-  .route("/addCustomer")
-  .post(
-    checkNulls,
-    authController.protect,
-    authController.restrictTo("customer"),
-    controllerCustomer.addCustomer
-  );
 routerCustomer.route("/showCustomers").get(
   // authController.protect,
   // authController.restrictTo("customer"),
@@ -39,14 +31,14 @@ routerCustomer
   .patch(
     checkNulls,
     authController.protect,
-    authController.restrictTo("customer"),
+    authController.restrictTo("Customer"),
     controllerCustomer.editCustomer
   );
 routerCustomer
   .route("/getCustomerByUsername/:username")
   .get(
     authController.protect,
-    authController.restrictTo("customer", "Admin"),
+    authController.restrictTo("Customer", "Admin"),
     controllerCustomer.getCustomerByUsername
   );
 

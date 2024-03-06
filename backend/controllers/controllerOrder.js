@@ -1,20 +1,36 @@
 const Order = require("../models/order");
+const Book = require("../models/book");
 const express = require("express");
+
+const checkBookIfExists = async (ISBN) => {
+  return await Book.findOne({ ISBN: ISBN });
+};
 
 // make order
 const addOrder = async (req, res, next) => {
   let totalPayment = 0;
   req.body.books.forEach((book) => {
-    console.log(req.body.books.serialNumber + " " + req.body.books.amount);
+    // console.log(book.ISBN + " " + book.amount);
+    const getBook = checkBookIfExists(book.ISBN);
+    if (getBook) {
+      // res.status(200).json({
+      //   // status: 'success',
+      //   book: { getBook },
+      console.log(getBook);
+      // });
+    } else console.log("No");
   });
-  req.body.books.forEach((book) => {
-    totalPayment += book.price;
+  res.status(201).json({
+    status: "success",
   });
-  let newOrder = await Order.create(req.body);
-  newOrder.totalPayment = totalPayment;
-  newOrder.status = "pending";
-  await newOrder.save();
-  res.status(201).json(newOrder);
+  // req.body.books.forEach((book) => {
+  //   totalPayment += book.price;
+  // });
+  // let newOrder = await Order.create(req.body);
+  // newOrder.totalPayment = totalPayment;
+  // newOrder.status = "pending";
+  // await newOrder.save();
+  // res.status(201).json(newOrder);
 };
 
 // cancel order

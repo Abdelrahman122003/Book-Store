@@ -6,7 +6,6 @@ const bookSchema = mongoose.Schema({
   author: { type: String, required: true },
   ISBN: { type: String, required: true, unique: true },
   pages: { type: Number, required: true },
-  cover: { type: String, required: true },
   category: { type: String, required: true },
   rate: { type: Number, default: 1 },
   numberOfPayments: { type: Number, default: 0 },

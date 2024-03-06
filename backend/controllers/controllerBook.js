@@ -6,6 +6,7 @@ const Book = require("../models/book");
 const addBook = async (req, res, next) => {
   // delete cover
   const { name, price, author, ISBN, pages, category } = req.body;
+  // const passwordChangedAt
   if (!name || !price || !author || !ISBN || !pages || !category) {
     return res.status(400).json({
       status: "fail",
@@ -19,13 +20,6 @@ const addBook = async (req, res, next) => {
       status: "fail",
       message:
         "The serial number of this book has been used before. Please try again.",
-    });
-  }
-  const getBookName = await Book.findOne({ name: name });
-  if (getBookName) {
-    res.status(400).json({
-      status: "fail",
-      message: "The name of this book has been used before. Please try again.",
     });
   }
   const newBook = await Book.create(req.body);
@@ -88,7 +82,6 @@ const editBook = async (req, res, next) => {
   if (amount) book.amount = amount;
   if (author) book.author = author;
   if (pages) book.pages = pages;
-  if (cover) book.cover = cover;
   if (category) book.category = category;
   if (amount) book.amount = amount;
   if (rate) book.rate = rate;
@@ -107,7 +100,7 @@ const getBookByISBN = async (req, res, next) => {
   if (!book) {
     return res.status(404).json({
       status: "fail",
-      message: "This is not vaild ISBN",
+      message: "This is not valid ISBN",
     });
   }
   res.status(200).json({
