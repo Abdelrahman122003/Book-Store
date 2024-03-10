@@ -42,7 +42,10 @@ exports.signup = catchAsync(async (req, res, next) => {
 });
 
 exports.login = catchAsync(async (req, res, next) => {
+  console.log("enter login function");
   const { username, password } = req.body;
+  console.log("login ", username, " ", password);
+  // console.log(req.body);
 
   // console.log(".env : " + process.env.JWT_SECRET);
   if (!password || !username) {
