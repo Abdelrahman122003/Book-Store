@@ -34,6 +34,7 @@ const createSendJWTToken = (user, statusCode, res) => {
     data: {
       user,
     },
+    // usSer,
   });
 };
 exports.signup = catchAsync(async (req, res, next) => {
@@ -50,6 +51,7 @@ exports.login = catchAsync(async (req, res, next) => {
   // console.log(".env : " + process.env.JWT_SECRET);
   if (!password || !username) {
     // console.log("i am here");
+
     return next(new AppError("Please provide username and password", 400));
   }
   //  check if username is exist and password is correct.
@@ -57,7 +59,10 @@ exports.login = catchAsync(async (req, res, next) => {
   const correct = await customer.correctPassword(password, customer.password);
   // console.log(correct + "  " + customer);
   if (!customer || !correct) {
-    return next(new AppError("Incorrect username or password", 401));
+    // return next(new AppError("Incorrect username or password", 401));
+    res.status(401).json({
+      message: "Incorrect username or password",
+    });
   }
   createSendJWTToken(customer, 200, res);
 });

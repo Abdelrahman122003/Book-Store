@@ -74,6 +74,7 @@
             <input type="checkbox" name="" />
             <label>REMEBER ME</label><a href="">Forget Password </a>
           </div>
+          <div id="error-message" style="color: red; size: 20px"></div>
           <input type="submit" value="LogIn" />
         </form>
       </div>
@@ -122,6 +123,7 @@
           </li>
         </ul>
       </div>
+
       <div>CopyRights Reseved @ 2024 by <span>E.Ahmed Osama</span></div>
     </footer>
     <script src="../../Js/all.js"></script>
@@ -157,15 +159,31 @@
         ).catch((err) => {
           console.log("error ", err);
         });
-        console.log(username, " ", password);
+        const errorDiv = document.getElementById("error-message");
+
         if (!response.ok) {
           console.error(`Error: ${response.status} - ${response.statusText}`);
+          errorDiv.innerHTML =
+            "Incorrect username or password. Please Try again.";
           return;
         }
         try {
-          const { token } = await response.json();
+          // retrieve token and data(user)
+          const { token, data } = await response.json();
           console.log(token);
+          // 2)store token in cookies
           document.cookie = `token=${token}`;
+
+          errorDiv.innerHTML = "";
+          // 3)check if role = admin or customer
+          if (data.user.role === "admin") {
+            // go to admin page
+            // window.location.href = "../../html/Reader/Register.html";
+          } else {
+            // go to customer page
+            // window.location.href = "../../html/Reader/Register.html";
+          }
+          // To navigate to another page
         } catch (error) {
           console.error("Error parsing JSON:", error);
         }
