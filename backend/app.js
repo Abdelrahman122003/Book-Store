@@ -41,6 +41,14 @@ const app = express();
 //   // Pass to next layer of middleware
 //   next();
 // });
+// session
+app.use(
+  session({
+    secret: "book-store-nodejs",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 app.use(
   cors({

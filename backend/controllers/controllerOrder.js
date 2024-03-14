@@ -1,36 +1,23 @@
 const Order = require("../models/order");
-const Book = require("../models/book");
-const express = require("express");
-
-const checkBookIfExists = async (ISBN) => {
-  return await Book.findOne({ ISBN: ISBN });
-};
-
 // make order
 const addOrder = async (req, res, next) => {
-  let totalPayment = 0;
+  console.log("enter make order function");
+  let totalPayment = 0.0;
   req.body.books.forEach((book) => {
-    // console.log(book.ISBN + " " + book.amount);
-    const getBook = checkBookIfExists(book.ISBN);
-    if (getBook) {
-      // res.status(200).json({
-      //   // status: 'success',
-      //   book: { getBook },
-      console.log(getBook);
-      // });
-    } else console.log("No");
+    totalPayment += book.quantity * book.price;
   });
-  res.status(201).json({
-    status: "success",
-  });
-  // req.body.books.forEach((book) => {
-  //   totalPayment += book.price;
-  // });
-  // let newOrder = await Order.create(req.body);
-  // newOrder.totalPayment = totalPayment;
-  // newOrder.status = "pending";
-  // await newOrder.save();
-  // res.status(201).json(newOrder);
+  console.log("totalPayment: ", totalPayment);
+
+  try {
+    let newOrder = await Order.create(req.body);
+    newOrder.totalPayment = totalPayment;
+    newOrder.status = "pending";
+    await newOrder.save();
+    res.status(201).json(newOrder);
+  } catch (error) {
+    console.error("Error creating order:", error);
+    res.status(500).json({ error: "Error creating order" });
+  }
 };
 
 // cancel order
