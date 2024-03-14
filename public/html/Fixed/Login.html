@@ -10,7 +10,7 @@
   <body>
     <nav>
       <div>
-        <img src="../../Images/X.png" crossorigin="anonymous" alt="" />
+        <!-- <img src="../../Images/X.jpg" crossorigin="anonymous" alt="" /> -->
         <h1><a href="../Fixed/Home.html">X </a><span>Library</span></h1>
       </div>
       <div id="NavBar">
@@ -48,19 +48,19 @@
             <span id="SignInCont"
               ><i class="fa-regular fa-user" id="SignInIcon"></i>
               <p>
-                <a href="../Reader/Register.html" id="SignIn">SignIn</a>
+                <a href="../Reader/Register.html" id="SignIn">Register</a>
               </p></span
             >
           </li>
         </ul>
       </div>
     </nav>
-    <button id="ChangeState">Change State</button>
+
     <section class="Login">
       <div>
         <h1>Enter To Your Own World</h1>
       </div>
-      <div><img src="../../Images/X.png" crossorigin="anonymous" alt="" /></div>
+      <div><img src="../../Images/X.jpg" crossorigin="anonymous" alt="" /></div>
       <div>
         <form action="" method="post">
           <input type="text" name="username" placeholder="Username" required />
@@ -81,7 +81,7 @@
     </section>
     <footer>
       <div>
-        <img src="../../Images/X.png" alt="" />
+        <img src="../../Images/" alt="" />
         <h1><a href="../Fixed/Home.html">X </a><span>Library</span></h1>
       </div>
       <div>
@@ -176,12 +176,12 @@
 
           errorDiv.innerHTML = "";
           // 3)check if role = admin or customer
-          if (data.user.role === "admin") {
+          if (data.user.role === "Admin") {
             // go to admin page
-            // window.location.href = "../../html/Reader/Register.html";
+            window.location.href = "../../html/Admin/DashBoard.html";
           } else {
             // go to customer page
-            // window.location.href = "../../html/Reader/Register.html";
+            window.location.href = "../../html/Reader/DachBoardCustomer.html";
           }
           // To navigate to another page
         } catch (error) {
