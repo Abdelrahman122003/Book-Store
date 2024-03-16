@@ -10,6 +10,7 @@ const orderRouter = require("./routes/orderRouter");
 const handlerErrorsAuto = require("./controllers/errorController");
 const helmet = require("helmet");
 const cors = require("cors");
+const expressSession = require("express-session");
 
 //
 const app = express();
@@ -43,7 +44,7 @@ const app = express();
 // });
 // session
 app.use(
-  session({
+  expressSession({
     secret: "book-store-nodejs",
     resave: false,
     saveUninitialized: true,

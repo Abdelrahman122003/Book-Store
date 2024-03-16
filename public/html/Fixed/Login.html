@@ -105,7 +105,7 @@
           src="../../Images/Book2.jpg"
           alt=""
         /><img src="../../Images/Book3.jpeg" alt="" /><img
-          src="../../Images/Book4.peg"
+          src="../../Images/Book4.png"
           alt=""
         />
         <ul>
@@ -132,24 +132,16 @@
     <script>
       async function submitHandler(event) {
         event.preventDefault();
-
-        console.log("submit");
-
         const username = document.querySelector('input[name="username"]').value;
         const password = document.querySelector('input[name="password"]').value;
-        // const app = require("../../../backend/app.js");
         console.log(username, "   ", password);
         const response = await fetch(
           "http://127.0.0.1:2003/api/customers/login",
           {
             method: "POST",
-            // mode: "same-origin",
             credentials: "same-origin",
             headers: {
               "Content-Type": "application/json",
-              // "X-HTTP-Method-Override": "POST", // Add this line if required
-              // "Cross-Origin-Resource-Policy": "same-origin",
-              // "Cross-Origin-Resource-Policy": "same-site",
             },
             body: JSON.stringify({
               username,
@@ -170,20 +162,19 @@
         try {
           // retrieve token and data(user)
           const { token, data } = await response.json();
-          console.log(token);
-          // 2)store token in cookies
-          document.cookie = `token=${token}`;
+          // 2)store token in local storage
 
-          errorDiv.innerHTML = "";
+          localStorage.setItem("user", JSON.stringify(data.user));
+          localStorage.setItem("token", token);
           // 3)check if role = admin or customer
           if (data.user.role === "Admin") {
             // go to admin page
             window.location.href = "../../html/Admin/DashBoard.html";
           } else {
-            // go to customer page
-            window.location.href = "../../html/Reader/DachBoardCustomer.html";
+            // Extract the path from the new page URL
+            const newPath = "../../html/Reader/DachBoardCustomer.html";
+            window.location.href = newPath;
           }
-          // To navigate to another page
         } catch (error) {
           console.error("Error parsing JSON:", error);
         }

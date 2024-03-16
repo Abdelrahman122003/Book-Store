@@ -6,13 +6,18 @@ const addOrder = async (req, res, next) => {
   req.body.books.forEach((book) => {
     totalPayment += book.quantity * book.price;
   });
-  console.log("totalPayment: ", totalPayment);
-
   try {
-    let newOrder = await Order.create(req.body);
-    newOrder.totalPayment = totalPayment;
-    newOrder.status = "pending";
+    // Create a new order
+    let newOrder = await Order.create({
+      books: req.body,
+      totalPayment: totalPayment,
+      status: "pending",
+      customerId: req.user._id, // Assigning customerId from req.user._id
+    });
+
+    console.log(newOrder);
     await newOrder.save();
+    // Handle success or further processing
     res.status(201).json(newOrder);
   } catch (error) {
     console.error("Error creating order:", error);

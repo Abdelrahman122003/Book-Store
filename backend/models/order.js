@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const orderSchema = mongoose.Schema({
   // status ---> for pending, arrived
   status: { type: String },
-  // customerId: { type: mongoose.Schema.ObjectId , required: true},
+  // customerId: { type: mongoose.Schema.ObjectId, required: true },
   customerId: { type: String, required: true },
   date: { type: Date, default: Date.now() },
   // calc by method

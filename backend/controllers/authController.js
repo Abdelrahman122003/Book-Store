@@ -18,14 +18,14 @@ const createSendJWTToken = (user, statusCode, res) => {
   const token = signToken(user._id);
 
   // create cookie and send it through http
-  const cookieOptions = {
-    expires: new Date(
-      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true,
-  };
+  // const cookieOptions = {
+  //   expires: new Date(
+  //     Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+  //   ),
+  //   httpOnly: true,
+  // };
   if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
-  res.cookie("jwt", token, cookieOptions);
+  res.cookie("jwt", token);
   // remove password from output
   user.password = undefined;
   res.status(200).json({
@@ -112,6 +112,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   // }
   // Grant access to protected route
   req.user = currentUser;
+  console.log("from protect function : ", req.user);
   // console.log("from protect function : ", currentUser._id);
   next();
 });

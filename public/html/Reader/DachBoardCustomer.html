@@ -10,7 +10,7 @@
   <body>
     <nav>
       <div>
-        <img src="../../Images/X.png" alt="" />
+        <!-- <img src="../../Images/X.jpg" alt="" /> -->
         <h1><a href="../Reader/Home.html">X </a><span>Library</span></h1>
       </div>
       <div id="NavBar">
@@ -205,7 +205,7 @@
     <section class="Home AboutUs" id="AboutUs">
       <h1>About Us</h1>
       <div>
-        <div><img src="../../Images/X.png" alt="" /></div>
+        <div><img src="../../Images/X.jpg" alt="" /></div>
         <div>
           It’s a great example of how to use such a page as a sort of pre-sales
           platform, It’s a great example of how to use such a page as a sort of
@@ -268,7 +268,7 @@
     <section class="Home ContactUs" id="ContactUs">
       <h1>Contact Us</h1>
       <div>
-        <div><img src="../../Images/X.png" alt="" /></div>
+        <div><img src="../../Images/X.jpg" alt="" /></div>
         <div>
           <form action="">
             <input type="text" placeholder="Username" required />
@@ -280,7 +280,7 @@
     </section>
     <footer>
       <div>
-        <img src="../../Images/X.png" alt="" />
+        <img src="../../Images/X.jpg" alt="" />
         <h1><a href="../Reader/Home.html">X </a><span>Library</span></h1>
       </div>
       <div>
@@ -304,7 +304,7 @@
           src="../../Images/Book2.jpg"
           alt=""
         /><img src="../../Images/Book3.jpeg" alt="" /><img
-          src="../../Images/Book4.peg"
+          src="../../Images/Book4.png"
           alt=""
         />
         <ul>
@@ -328,9 +328,16 @@
     <script src="../../Js/all.min.js"></script>
     <script src="../../Js/main.js"></script>
     <script>
-      fetch("/api/books/showBooks")
-        .then((response) => response.json())
-        .then((books) => console.log(books));
+      const userData = localStorage.getItem("user");
+      const token = localStorage.getItem("token");
+      console.log("token : ", token);
+      if (userData !== null) {
+        const user = JSON.parse(userData);
+        console.log(user);
+      } else {
+        // error
+        console.log("No user data found in local storage");
+      }
     </script>
   </body>
 </html>
