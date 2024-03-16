@@ -10,7 +10,6 @@ const orderRouter = require("./routes/orderRouter");
 const handlerErrorsAuto = require("./controllers/errorController");
 const helmet = require("helmet");
 const cors = require("cors");
-const expressSession = require("express-session");
 
 //
 const app = express();
@@ -42,23 +41,19 @@ const app = express();
 //   // Pass to next layer of middleware
 //   next();
 // });
-// session
-app.use(
-  expressSession({
-    secret: "book-store-nodejs",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+
+//js cookie
+
+// app.use();
+app.use(cors());
 
 app.use(
   cors({
     origin: "http://127.0.0.1:5500",
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
+    allowedHeaders: ["Authorization", "Content-Type"],
   })
 );
-// app.use(cors(corsOptions));
 // Set security http headers
 app.use(helmet());
 // body parser, reading data from body into req.body

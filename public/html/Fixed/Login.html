@@ -166,6 +166,7 @@
 
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("token", token);
+          console.log("token in login : ", token);
           // 3)check if role = admin or customer
           if (data.user.role === "Admin") {
             // go to admin page

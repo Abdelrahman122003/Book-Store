@@ -1,4 +1,4 @@
-<!DOCTYPE html>X.png
+<!DOCTYPE html>
 <html len="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,7 +15,7 @@
       </div>
       <div id="NavBar">
         <ul>
-          <li><a href="../Reader/Library.html">Library</a></li>
+          <li><a href="../Fixed/Library.html">Library</a></li>
           <li><a href="../Reader/Home.html#ContactUs">Contact</a></li>
           <li><a href="../Reader/Home.html#AboutUs">About</a></li>
           <li><a href="../Reader/Home.html#Team">Team</a></li>
@@ -327,17 +327,5 @@
     <script src="../../Js/all.js"></script>
     <script src="../../Js/all.min.js"></script>
     <script src="../../Js/main.js"></script>
-    <script>
-      const userData = localStorage.getItem("user");
-      const token = localStorage.getItem("token");
-      console.log("token : ", token);
-      if (userData !== null) {
-        const user = JSON.parse(userData);
-        console.log(user);
-      } else {
-        // error
-        console.log("No user data found in local storage");
-      }
-    </script>
   </body>
 </html>

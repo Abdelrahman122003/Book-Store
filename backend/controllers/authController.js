@@ -5,7 +5,8 @@ const Customer = require("../models/customer");
 const catchAsync = require("../utilities/catchAsync");
 const AppError = require("../utilities/appError");
 const sendEmail = require("../utilities/email");
-
+const jsCookie = require("js-cookie");
+const cookieParser = require("cookie-parser");
 // const { CurrencyCodes } = require("validator/lib/isiso4217");
 
 const signToken = (id) => {
@@ -18,14 +19,24 @@ const createSendJWTToken = (user, statusCode, res) => {
   const token = signToken(user._id);
 
   // create cookie and send it through http
-  // const cookieOptions = {
-  //   expires: new Date(
-  //     Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-  //   ),
-  //   httpOnly: true,
-  // };
+  // let minute = 60 * 1000;
+  // res.cookie(
+  //   authCookie,
+  //   "LoggedIn",
+  //   { maxAge: minute },
+  //   { HttpOnly: true },
+  //   { expire: 24 * 60 * 60 * 1000 },
+  //   { customerId: customer._id },
+  //   { jwtToken: token }
+  // );
+  const cookieOptions = {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true,
+  };
   if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
-  res.cookie("jwt", token);
+  res.cookie("jwt", token, cookieOptions);
   // remove password from output
   user.password = undefined;
   res.status(200).json({
@@ -43,10 +54,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 });
 
 exports.login = catchAsync(async (req, res, next) => {
-  console.log("enter login function");
   const { username, password } = req.body;
-  console.log("login ", username, " ", password);
-  // console.log(req.body);
 
   // console.log(".env : " + process.env.JWT_SECRET);
   if (!password || !username) {
@@ -64,6 +72,7 @@ exports.login = catchAsync(async (req, res, next) => {
       message: "Incorrect username or password",
     });
   }
+
   createSendJWTToken(customer, 200, res);
 });
 
@@ -71,6 +80,8 @@ exports.login = catchAsync(async (req, res, next) => {
 // this function check if this customer logged in or no.
 exports.protect = catchAsync(async (req, res, next) => {
   let token;
+  // console.log("token from protect: ", req.headers);
+  // console.log("token : ", req.body.token);
   //1)Getting token and check if it is there
   if (
     req.headers.authorization &&
@@ -80,7 +91,6 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   if (!token) {
-    console.log("in this.");
     return next(
       new AppError("You are not logged in! Please log in to get access", 401)
     );
@@ -112,7 +122,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   // }
   // Grant access to protected route
   req.user = currentUser;
-  console.log("from protect function : ", req.user);
+  // console.log("from protect function : ", req.user);
   // console.log("from protect function : ", currentUser._id);
   next();
 });

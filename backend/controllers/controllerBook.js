@@ -1,5 +1,5 @@
 // connect to database
-
+const jwt = require("jsonwebtoken");
 const Book = require("../models/book");
 // add book
 // async ---> do not wait for resulting
@@ -33,7 +33,9 @@ const addBook = async (req, res, next) => {
 };
 
 const showBooks = async (req, res, next) => {
+  console.log("cookie : ", req.cookies.jwt);
   const books = await Book.find();
+  // console.log("from showBooks method : ", books);
   res.status(200).json({
     status: "success",
     data: { books },
