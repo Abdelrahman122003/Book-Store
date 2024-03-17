@@ -39,18 +39,20 @@
             <a href=""><i class="fa-solid fa-envelope"></i></a>
           </li>
           <li>
-            <span id="LogInCont"
-              ><i class="fa-solid fa-right-to-bracket" id="LogInIcon"></i>
-              <p><a href="../Fixed/Login.html" id="LogIn">Login</a></p></span
+            <span id="LogInCont">
+              <i class="fa-solid fa-right-to-bracket" id="LogInIcon"></i>
+              <p>
+                <a href="../Fixed/Login.html" id="LogIn">Login</a>
+              </p></span
             >
           </li>
           <li>
-            <span id="SignInCont"
-              ><i class="fa-regular fa-user" id="SignInIcon"></i>
+            <span id="SignInCont">
+              <i class="fa-regular fa-user" id="SignInIcon"></i>
               <p>
                 <a href="../Reader/Register.html" id="SignIn">Register</a>
-              </p></span
-            >
+              </p>
+            </span>
           </li>
         </ul>
       </div>
@@ -221,23 +223,23 @@
       <div>
         <div>
           <img src="../../Images/Man.jpg" alt="" />
-          <h3>Zaih Younes</h3>
-          <span>CEO</span><span>1950:1990</span>
+          <h3>Ahmed Osama</h3>
+          <span>Fronted End Developer</span>
+        </div>
+        <div>
+          <img src="../../Images/Man.jpg" alt="" />
+          <h3>Abdelrahman</h3>
+          <span>Back End Developer</span><
         </div>
         <div>
           <img src="../../Images/Man.jpg" alt="" />
           <h3>Zaih Younes</h3>
-          <span>IT Engineer </span><span>1950:1990</span>
+          <span>Main Manager</span>
         </div>
         <div>
           <img src="../../Images/Man.jpg" alt="" />
           <h3>Zaih Younes</h3>
-          <span>Main Manager</span><span>1950:1990</span>
-        </div>
-        <div>
-          <img src="../../Images/Man.jpg" alt="" />
-          <h3>Zaih Younes</h3>
-          <span>Sales Manager</span><span>1950:1990</span>
+          <span>Sales Manager</span>
         </div>
       </div>
     </section>
@@ -245,7 +247,7 @@
       <div>
         <div>
           <i class="fa-solid fa-3x fa-book"></i>
-          <h3>+200K</h3>
+          <h3 id="booksNumber">+200K</h3>
           <span>Books</span>
         </div>
         <div>
@@ -255,7 +257,7 @@
         </div>
         <div>
           <i class="fa-solid fa-3x fa-user"></i>
-          <h3>+250K</h3>
+          <h3 id="numberOfCustomer">+250K</h3>
           <span>Users</span>
         </div>
         <div>
@@ -327,10 +329,66 @@
     <script src="../../Js/all.js"></script>
     <script src="../../Js/all.min.js"></script>
     <script src="../../Js/main.js"></script>
+    <!-- to retrieve number of customer -->
     <script>
-      fetch("/api/books/showBooks")
-        .then((response) => response.json())
-        .then((books) => console.log(books));
+      async function getNumberOfCustomers() {
+        try {
+          const response = await fetch(
+            "http://127.0.0.1:2003/api/customers/getNumberOfCustomers",
+            {
+              method: "GET",
+              credentials: "same-origin",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(
+              `Error: ${response.status} - ${response.statusText}`
+            );
+          }
+          const { data } = await response.json();
+
+          // show number of books
+          document.getElementById("numberOfCustomer").innerHTML =
+            data.Customers.length;
+        } catch (error) {
+          console.error("Error fetching data:", error.message);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", getNumberOfCustomers);
+    </script>
+    <!-- to retrieve number of books  -->
+    <script>
+      async function getNumberOfBooks() {
+        try {
+          const response = await fetch(
+            "http://127.0.0.1:2003/api/books/getNumbersOfBooks",
+            {
+              method: "GET",
+              credentials: "same-origin",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(
+              `Error: ${response.status} - ${response.statusText}`
+            );
+          }
+          const { data } = await response.json();
+
+          // show number of books
+          document.getElementById("booksNumber").innerHTML = data.books.length;
+        } catch (error) {
+          console.error("Error fetching data:", error.message);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", getNumberOfBooks);
     </script>
   </body>
 </html>

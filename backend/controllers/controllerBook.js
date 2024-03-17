@@ -32,9 +32,8 @@ const addBook = async (req, res, next) => {
   });
 };
 
-
 const showBooks = async (req, res, next) => {
-  console.log("cookie : ", req.cookies.jwt);
+  // console.log("cookie : ", req.cookies.jwt);
   const books = await Book.find();
   // console.log("from showBooks method : ", books);
   res.status(200).json({

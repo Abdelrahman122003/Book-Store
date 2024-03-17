@@ -70,10 +70,10 @@
             placeholder="Password"
             required
           />
-          <div>
+          <!-- <div>
             <input type="checkbox" name="" />
             <label>REMEBER ME</label><a href="">Forget Password </a>
-          </div>
+          </div> -->
           <div id="error-message" style="color: red; size: 20px"></div>
           <input type="submit" value="LogIn" />
         </form>
@@ -151,29 +151,35 @@
         ).catch((err) => {
           console.log("error ", err);
         });
-        const errorDiv = document.getElementById("error-message");
-
+        // const errorDiv = document.getElementById("error-message");
+        const { message, status, token, data } = await response.json();
+        console.log("exist");
         if (!response.ok) {
-          console.error(`Error: ${response.status} - ${response.statusText}`);
-          errorDiv.innerHTML =
-            "Incorrect username or password. Please Try again.";
+          // console.error(`Error: ${response.status} - ${response.statusText}`);
+          ErrorMessage(status, message);
+          // errorDiv.innerHTML =
+          //   "Incorrect username or password. Please Try again.";
           return;
         }
+        // console.log("exist");
         try {
           // retrieve token and data(user)
-          const { token, data } = await response.json();
           // 2)store token in local storage
-
+          console.log("token : ", token);
+          console.log("data : ", data);
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("token", token);
-          console.log("token in login : ", token);
+          // console.log("token in login : ", token);
           // 3)check if role = admin or customer
           if (data.user.role === "Admin") {
             // go to admin page
             window.location.href = "../../html/Admin/DashBoard.html";
           } else {
             // Extract the path from the new page URL
+            // localStorage.setItem("Logged", true);
+            // console.log("entered");
             const newPath = "../../html/Reader/DachBoardCustomer.html";
+            // Login();
             window.location.href = newPath;
           }
         } catch (error) {

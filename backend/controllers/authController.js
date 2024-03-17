@@ -48,10 +48,11 @@ const createSendJWTToken = (user, statusCode, res) => {
     // usSer,
   });
 };
-exports.signup = catchAsync(async (req, res, next) => {
-  const newCustomer = await Customer.create(req.body);
-  createSendJWTToken(newCustomer, 201, res);
-});
+// exports.signup = catchAsync(async (req, res, next) => {
+//   const {username
+//   const newCustomer = await Customer.create(req.body);
+//   createSendJWTToken(newCustomer, 201, res);
+// });
 
 exports.login = catchAsync(async (req, res, next) => {
   const { username, password } = req.body;
@@ -59,7 +60,6 @@ exports.login = catchAsync(async (req, res, next) => {
   // console.log(".env : " + process.env.JWT_SECRET);
   if (!password || !username) {
     // console.log("i am here");
-
     return next(new AppError("Please provide username and password", 400));
   }
   //  check if username is exist and password is correct.
@@ -67,8 +67,10 @@ exports.login = catchAsync(async (req, res, next) => {
   const correct = await customer.correctPassword(password, customer.password);
   // console.log(correct + "  " + customer);
   if (!customer || !correct) {
+    console.log("enter error section");
     // return next(new AppError("Incorrect username or password", 401));
     res.status(401).json({
+      status: "fail",
       message: "Incorrect username or password",
     });
   }
@@ -91,9 +93,11 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   if (!token) {
-    return next(
-      new AppError("You are not logged in! Please log in to get access", 401)
-    );
+    res.status(401).json({
+      status: "fail",
+      message: "You are not logged in! Please log in to get access",
+    });
+    return;
   }
   //2)Verification token
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
@@ -101,12 +105,11 @@ exports.protect = catchAsync(async (req, res, next) => {
   //3)check if user still exists
   const currentUser = await Customer.findById(decoded.id);
   if (!currentUser) {
-    return next(
-      new AppError(
-        "The user belonging to this token does no longer exist.",
-        401
-      )
-    );
+    res.status(401).json({
+      status: "fail",
+      message: "The user belonging to this token does no longer exist.",
+    });
+    return;
   }
 
   // 4) Check if user changed password after the token was issued

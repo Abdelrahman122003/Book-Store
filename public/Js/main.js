@@ -1,79 +1,73 @@
-var Icon = document.getElementById("Icon");
-var Bar = document.getElementById("NavBar");
+// The Navbar Openning and Cloing Function
+let Icon = document.getElementById("Icon");
+let Bar = document.getElementById("NavBar");
 Icon.addEventListener("click", function () {
   Bar.classList.toggle("Show");
 });
-var LoginText = document.getElementById("LogIn");
-var LoginTextCont = document.getElementById("LogInCont");
-var LoginIcon = document.getElementById("LogInIcon");
-var SignInText = document.getElementById("SignIn");
-var SignInTextCont = document.getElementById("SignInCont");
-var SignIcon = document.getElementById("SignInIcon");
-var LogoutIcon = document.createElement("i");
-LogoutIcon.classList.add("fa-solid");
-LogoutIcon.classList.add("fa-1x");
-LogoutIcon.classList.add("fa-right-from-bracket");
-var CartIcon = document.createElement("i");
-CartIcon.classList.add("fa-solid");
-CartIcon.classList.add("fa-1x");
-CartIcon.classList.add("fa-cart-shopping");
-var ChangeState = document.getElementById("ChangeState");
-function Change() {
-  if (window.localStorage.getItem("Status")) {
-    console.log(3);
-    LoginText.innerText = "LogOut";
-    SignInText.innerText = "Cart";
-    SignInText === null || SignInText === void 0
-      ? void 0
-      : SignInText.setAttribute(
-          "href",
-          "/Library-System-/dist/html/Reader/Cart.html"
-        );
-    LoginIcon.remove();
-    SignIcon.remove();
-    LoginTextCont === null || LoginTextCont === void 0
-      ? void 0
-      : LoginTextCont.prepend(LogoutIcon);
-    SignInTextCont === null || SignInTextCont === void 0
-      ? void 0
-      : SignInTextCont.prepend(CartIcon);
-    LoginText === null || LoginText === void 0
-      ? void 0
-      : LoginText.setAttribute(
-          "href",
-          "/Library-System-/dist/html/Fixed/Home.html"
-        );
-  } else {
-    console.log(4);
-    LoginText === null || LoginText === void 0
-      ? void 0
-      : LoginText.setAttribute(
-          "href",
-          "/Library-System-/dist/html/Fixed/Login.html"
-        );
-    SignInText === null || SignInText === void 0
-      ? void 0
-      : SignInText.setAttribute(
-          "href",
-          "/Library-System-/dist/html/Reader/Register.html"
-        );
+
+// Error Message Function
+function ErrorMessage(Title, Text) {
+  let container = document.createElement("div");
+  let TheTitle = document.createElement("h2");
+  let Themessage = document.createElement("p");
+  Themessage.innerHTML = Text;
+  TheTitle.innerHTML = Title;
+  container.classList.add("Error");
+  container.appendChild(TheTitle);
+  container.appendChild(Themessage);
+  document.body.appendChild(container);
+
+  TheTitle.style.cssText =
+    "font-size: x-large;font-weight: 900;text-transform: uppercase;color: red;";
+  Themessage.style.cssText =
+    "font-size: x-large;font-weight: 700;text-transform: lowercase;color: white;";
+  container.style.cssText =
+    "z-index: 100;box-shadow: 20px 25px 25px #d62020;width: fit-content; padding: 5px 80px;text-align: center;border-radius: 10px;background-color: black;position:absolute;top:80%;right:0%";
+
+  window.setTimeout(() => {
+    container.style.display = "none";
+  }, 5000);
+}
+// Change Navbar Components Form User Mode to Customer Mode
+let Text1 = document.getElementById("LogIn");
+let Text2 = document.getElementById("SignIn");
+let Icon1 = document.getElementById("LogInIcon");
+let Icon2 = document.getElementById("SignInIcon");
+let LoginLink = "../Fixed/Login.html";
+let RegisterLink = "../Reader/Register.html";
+let LogoutLink = "../Fixed/Home.html";
+let CartLink = "../Reader/Cart.html";
+
+function Login() {
+  if (localStorage.getItem("Logged")) {
+    console.log(122003);
+    Text1.innerHTML = "LOGOUT";
+    Text2.innerHTML = "CART";
+
+    Icon1.classList.remove("fa-right-to-bracket");
+    Icon1.classList.add("fa-right-from-bracket");
+
+    Icon2.classList.remove("fa-regular");
+    Icon2.classList.remove("fa-user");
+    Icon2.classList.add("fa-solid");
+    Icon2.classList.add("fa-cart-shopping");
+
+    Text1.href = LogoutLink;
+    Text2.href = CartLink;
   }
 }
-LoginText === null || LoginText === void 0
-  ? void 0
-  : LoginText.addEventListener("click", function () {
-      if (LoginText.innerText.toLocaleLowerCase() === "logout") {
-        console.log(1);
-        window.localStorage.setItem("Status", "false");
-        Change();
-      } else {
-        console.log(5);
-      }
-    });
-ChangeState === null || ChangeState === void 0
-  ? void 0
-  : ChangeState.addEventListener("click", function () {
-      console.log(2);
-      window.localStorage.setItem("Status", "true");
-      Change();
-    });
+
+function Logout() {
+  if (!localStorage.getItem("Logged")) {
+    Text1.innerHTML = "LOGIN";
+    Text2.innerHTML = "REGISTER";
+    Icon1.classList.remove("fa-right-from-bracket").add("fa-right-to-bracket");
+    Icon2.classList
+      .remove("fa-soild")
+      .remove("fa-cart-shopping")
+      .add("fa-regular")
+      .add("fa-user");
+    Text1.href = LoginLink;
+    Text2.href = RegisterLink;
+  }
+}

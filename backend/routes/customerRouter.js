@@ -4,7 +4,7 @@ const controllerCustomer = require("../controllers/controllerCustomer");
 const checkNulls = require("../middlewares/checkNulls");
 const authController = require("../controllers/authController");
 
-routerCustomer.route("/register").post(authController.signup);
+routerCustomer.route("/register").post(controllerCustomer.addCustomer);
 routerCustomer.route("/login").post(authController.login);
 routerCustomer.route("/forgetPassword").post(authController.forgetPassword);
 routerCustomer
@@ -22,6 +22,12 @@ routerCustomer
   );
 
 routerCustomer.route("/showCustomers").get(
+  // authController.protect,
+  authController.restrictTo("Admin"),
+  controllerCustomer.showCustomers
+);
+
+routerCustomer.route("/getNumberOfCustomers").get(
   // authController.protect,
   // authController.restrictTo("customer"),
   controllerCustomer.showCustomers

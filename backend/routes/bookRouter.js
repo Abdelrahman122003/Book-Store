@@ -19,6 +19,7 @@ routerBook
     authController.restrictTo("Customer", "Admin"),
     controllerBook.showBooks
   );
+routerBook.route("/getNumbersOfBooks").get(controllerBook.showBooks);
 routerBook
   .route("/deleteBook/:ISBN")
   .delete(

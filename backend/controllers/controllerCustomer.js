@@ -12,9 +12,11 @@ const filterObj = (obj, ...allowedFields) => {
 
 // add customer --> register
 const addCustomer = async (req, res, next) => {
-  const { username, password, email, role } = req.body;
-  if (!username || !password || !email || !role) {
-    return res.status(400).json({
+  console.log("enter add customer");
+  const { username, password, email, confirmPassword } = req.body;
+  console.log(username, " ", password, " ", confirmPassword);
+  if (!username || !password || !email || !confirmPassword) {
+    res.status(400).json({
       status: "fail",
       message: "Missing required fields.",
     });
@@ -24,13 +26,22 @@ const addCustomer = async (req, res, next) => {
   });
   console.log(customers);
   if (customers.length !== 0) {
-    // console.log("hi existing customer");
+    console.log("hi existing customer");
     return res.status(400).json({
       status: "fail",
-      message: `Customer exist!`,
+      message: "This email or username is used before!",
       data: { customers },
     });
   }
+  if (password !== confirmPassword) {
+    console.log("enter this condtion");
+    return res.status(400).json({
+      status: "fail",
+      message: "Passwords are not the same!",
+    });
+  }
+  console.log("passed");
+  console.log(req.body);
   const newCustomer = await Customer.create(req.body);
   await newCustomer.save();
   res.status(201).json({

@@ -20,7 +20,6 @@ const customerSchema = mongoose.Schema({
   password: {
     type: String,
     required: [true, "Please provide a password"],
-    minlength: 8,
     select: false,
   },
   role: {
