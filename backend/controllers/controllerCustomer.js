@@ -26,7 +26,6 @@ const addCustomer = async (req, res, next) => {
   });
   console.log(customers);
   if (customers.length !== 0) {
-    console.log("hi existing customer");
     return res.status(400).json({
       status: "fail",
       message: "This email or username is used before!",
@@ -34,14 +33,11 @@ const addCustomer = async (req, res, next) => {
     });
   }
   if (password !== confirmPassword) {
-    console.log("enter this condtion");
     return res.status(400).json({
       status: "fail",
-      message: "Passwords are not the same!",
+      message: "Passwords are not the same(Password, Confirm Password)!",
     });
   }
-  console.log("passed");
-  console.log(req.body);
   const newCustomer = await Customer.create(req.body);
   await newCustomer.save();
   res.status(201).json({

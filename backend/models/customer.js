@@ -33,15 +33,6 @@ const customerSchema = mongoose.Schema({
 
   confirmPassword: {
     type: String,
-    required: [true, "Please confirm your password"],
-    validate: {
-      // this function to check password equal to confirmation password
-      // this only works on CREATE and  SAVE!
-      validator: function (el) {
-        return el == this.password;
-      },
-      message: "Passwords are not the same!",
-    },
   },
   passwordChangedAt: Date,
   passwordResetToken: String,
@@ -103,7 +94,7 @@ customerSchema.methods.createPasswordResetToken = function () {
     .update(resetToken)
     .digest("hex");
   // console.log("resetToken : ", resetToken);
-  console.log(resetToken + "   " + this.passwordResetToken);
+  // console.log(resetToken + "   " + this.passwordResetToken);
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
 
   return resetToken;

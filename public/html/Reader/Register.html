@@ -158,15 +158,13 @@
         });
 
         const { message, status } = await response.json();
-        console.log("response : ", response);
-        console.log("message : ", message);
         if (!response.ok) {
           // console.log("entered");
           ErrorMessage(response.status, message);
           return;
         }
 
-        // window.location.href = "../Fixed/Login.html";
+        window.location.href = "../Fixed/Login.html";
       }
 
       document.querySelector("form").addEventListener("submit", register);

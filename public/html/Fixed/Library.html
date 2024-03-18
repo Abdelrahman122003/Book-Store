@@ -248,15 +248,10 @@
               },
             }
           );
-
+          const { data, status, message } = await response.json();
           if (!response.ok) {
-            throw new Error(
-              `Error: ${response.status} - ${response.statusText}`
-            );
+            ErrorMessage(status, message);
           }
-          const { data, status } = await response.json();
-          console.log("status : ", status);
-          // get all books from response ----> data.books
         } catch (error) {
           console.error("Error fetching data:", error.message);
         }
