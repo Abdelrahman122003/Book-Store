@@ -14,7 +14,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -30,37 +30,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .AddBook > div > h1::before {
@@ -75,59 +75,60 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.AddBook > div > h1::after, .AddBook > div > h1::before {
-  border: 7px solid #778DA9;
+.AddBook > div > h1::after,
+.AddBook > div > h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
 .AddBook > div > form > div > select {
-  border: 3px solid #0D1B2A;
+  border: 3px solid #0d1b2a;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #778DA9;
+  background-color: #778da9;
   font-weight: 600;
-  color: #0D1B2A;
+  color: #0d1b2a;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .AddBook > div > form > div > select:hover {
-  color: #778DA9;
-  background-color: #0D1B2A;
+  color: #778da9;
+  background-color: #0d1b2a;
 }
 .AddBook > div > form > div > select a {
   text-decoration: none;
@@ -136,20 +137,20 @@ body {
 }
 
 .AddBook > div > button {
-  border: 3px solid #778DA9;
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .AddBook > div > button:hover {
-  color: #0D1B2A;
-  background-color: #778DA9;
+  color: #0d1b2a;
+  background-color: #778da9;
 }
 .AddBook > div > button a {
   text-decoration: none;
@@ -160,14 +161,14 @@ body {
 .AddBook > div > form > div > label {
   font-size: xx-large;
   font-weight: 600;
-  color: #1B263B;
+  color: #1b263b;
 }
 
 .AddBook > div > form > div > input {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: 60%;
   margin: 80px 20%;
 }
@@ -215,7 +216,8 @@ body {
   margin: 10px;
   text-align: center;
 }
-.AddBook > div > form > div label, .AddBook > div > form > div input {
+.AddBook > div > form > div label,
+.AddBook > div > form > div input {
   display: block;
 }
 .AddBook > div > form > div > input {
@@ -244,93 +246,103 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 @keyframes CycleLoopBefore {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.AdminShowBooks > div:first-of-type > button, .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div > button {
-  border: 3px solid #778DA9;
+.AdminShowBooks > div:first-of-type > button,
+.AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div > button {
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
-.AdminShowBooks > div:first-of-type > button:hover, .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div > button:hover {
-  color: #0D1B2A;
-  background-color: #778DA9;
+.AdminShowBooks > div:first-of-type > button:hover,
+.AdminShowBooks
+  > div:not(.AdminShowBooks > div:first-of-type)
+  > div
+  > button:hover {
+  color: #0d1b2a;
+  background-color: #778da9;
 }
-.AdminShowBooks > div:first-of-type > button a, .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div > button a {
+.AdminShowBooks > div:first-of-type > button a,
+.AdminShowBooks
+  > div:not(.AdminShowBooks > div:first-of-type)
+  > div
+  > button
+  a {
   text-decoration: none;
   color: inherit;
   transition: inherit;
@@ -340,7 +352,7 @@ body {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: 60%;
   margin: 80px 20%;
 }
@@ -348,14 +360,26 @@ body {
   border: none;
 }
 
-.AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:nth-last-child(2) > h2 {
-  color: #415A77;
+.AdminShowBooks
+  > div:not(.AdminShowBooks > div:first-of-type)
+  > div:nth-last-child(2)
+  > h2 {
+  color: #415a77;
 }
-.AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:nth-last-child(2) > h2 > span {
-  color: #778DA9;
+.AdminShowBooks
+  > div:not(.AdminShowBooks > div:first-of-type)
+  > div:nth-last-child(2)
+  > h2
+  > span {
+  color: #778da9;
   padding-left: 10px;
 }
-.AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:nth-last-child(2) > h2 > span > svg {
+.AdminShowBooks
+  > div:not(.AdminShowBooks > div:first-of-type)
+  > div:nth-last-child(2)
+  > h2
+  > span
+  > svg {
   margin-left: 5px;
 }
 
@@ -426,53 +450,73 @@ body {
 }
 .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div {
   padding: 20px;
-  background-color: #1B263B;
+  background-color: #1b263b;
 }
-.AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:nth-last-child(2) {
+.AdminShowBooks
+  > div:not(.AdminShowBooks > div:first-of-type)
+  > div:nth-last-child(2) {
   display: grid;
 }
 @media (min-width: 1200px) {
-  .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:nth-last-child(2) {
+  .AdminShowBooks
+    > div:not(.AdminShowBooks > div:first-of-type)
+    > div:nth-last-child(2) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 990px) and (max-width: 1199px) {
-  .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:nth-last-child(2) {
+  .AdminShowBooks
+    > div:not(.AdminShowBooks > div:first-of-type)
+    > div:nth-last-child(2) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 740px) and (max-width: 989px) {
-  .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:nth-last-child(2) {
+  .AdminShowBooks
+    > div:not(.AdminShowBooks > div:first-of-type)
+    > div:nth-last-child(2) {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 739px) {
-  .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:nth-last-child(2) {
+  .AdminShowBooks
+    > div:not(.AdminShowBooks > div:first-of-type)
+    > div:nth-last-child(2) {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:last-of-type {
+.AdminShowBooks
+  > div:not(.AdminShowBooks > div:first-of-type)
+  > div:last-of-type {
   display: grid;
   justify-items: center;
   align-items: center;
 }
 @media (min-width: 1200px) {
-  .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:last-of-type {
+  .AdminShowBooks
+    > div:not(.AdminShowBooks > div:first-of-type)
+    > div:last-of-type {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 990px) and (max-width: 1199px) {
-  .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:last-of-type {
+  .AdminShowBooks
+    > div:not(.AdminShowBooks > div:first-of-type)
+    > div:last-of-type {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 740px) and (max-width: 989px) {
-  .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:last-of-type {
+  .AdminShowBooks
+    > div:not(.AdminShowBooks > div:first-of-type)
+    > div:last-of-type {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 739px) {
-  .AdminShowBooks > div:not(.AdminShowBooks > div:first-of-type) > div:last-of-type {
+  .AdminShowBooks
+    > div:not(.AdminShowBooks > div:first-of-type)
+    > div:last-of-type {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -492,7 +536,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -508,37 +552,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .AdminShowOrders > div:first-of-type > h1::before {
@@ -553,59 +597,60 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.AdminShowOrders > div:first-of-type > h1::after, .AdminShowOrders > div:first-of-type > h1::before {
-  border: 7px solid #778DA9;
+.AdminShowOrders > div:first-of-type > h1::after,
+.AdminShowOrders > div:first-of-type > h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
 .AdminShowOrders > div > div button {
-  border: 3px solid #0D1B2A;
+  border: 3px solid #0d1b2a;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #778DA9;
+  background-color: #778da9;
   font-weight: 600;
-  color: #0D1B2A;
+  color: #0d1b2a;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .AdminShowOrders > div > div button:hover {
-  color: #778DA9;
-  background-color: #0D1B2A;
+  color: #778da9;
+  background-color: #0d1b2a;
 }
 .AdminShowOrders > div > div button a {
   text-decoration: none;
@@ -614,10 +659,10 @@ body {
 }
 
 .AdminShowOrders > div > div > h2 {
-  color: #415A77;
+  color: #415a77;
 }
 .AdminShowOrders > div > div > h2 > span {
-  color: #778DA9;
+  color: #778da9;
   padding-left: 10px;
 }
 .AdminShowOrders > div > div > h2 > span > svg {
@@ -656,7 +701,7 @@ body {
   }
 }
 .AdminShowOrders > div:not(.AdminShowOrders > div:first-of-type) {
-  background-color: #1B263B;
+  background-color: #1b263b;
   margin: 10px auto;
 }
 .AdminShowOrders > div > div {
@@ -706,7 +751,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -722,37 +767,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .Cart > div:first-of-type h1::before {
@@ -767,71 +812,81 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.Cart > div:first-of-type h1::after, .Cart > div:first-of-type h1::before {
-  border: 7px solid #778DA9;
+.Cart > div:first-of-type h1::after,
+.Cart > div:first-of-type h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
-.Cart > div:last-of-type > div > div > button:first-of-type, .Cart > div:last-of-type > div > div > button:last-of-type, .Cart > div:last-of-type > div > div > div > svg, .Cart > button {
-  border: 3px solid #778DA9;
+.Cart > div:last-of-type > div > div > button:first-of-type,
+.Cart > div:last-of-type > div > div > button:last-of-type,
+.Cart > div:last-of-type > div > div > div > svg,
+.Cart > button {
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
-.Cart > div:last-of-type > div > div > button:hover:first-of-type, .Cart > div:last-of-type > div > div > button:hover:last-of-type, .Cart > div:last-of-type > div > div > div > svg:hover, .Cart > button:hover {
-  color: #0D1B2A;
-  background-color: #778DA9;
+.Cart > div:last-of-type > div > div > button:hover:first-of-type,
+.Cart > div:last-of-type > div > div > button:hover:last-of-type,
+.Cart > div:last-of-type > div > div > div > svg:hover,
+.Cart > button:hover {
+  color: #0d1b2a;
+  background-color: #778da9;
 }
-.Cart > div:last-of-type > div > div > button:first-of-type a, .Cart > div:last-of-type > div > div > button:last-of-type a, .Cart > div:last-of-type > div > div > div > svg a, .Cart > button a {
+.Cart > div:last-of-type > div > div > button:first-of-type a,
+.Cart > div:last-of-type > div > div > button:last-of-type a,
+.Cart > div:last-of-type > div > div > div > svg a,
+.Cart > button a {
   text-decoration: none;
   color: inherit;
   transition: inherit;
 }
 
 .Cart > div:last-of-type > div > div:nth-last-child(2) > h2 {
-  color: #415A77;
+  color: #415a77;
 }
 .Cart > div:last-of-type > div > div:nth-last-child(2) > h2 > span {
-  color: #778DA9;
+  color: #778da9;
   padding-left: 10px;
 }
 .Cart > div:last-of-type > div > div:nth-last-child(2) > h2 > span > svg {
@@ -879,7 +934,7 @@ body {
 }
 .Cart > div:last-of-type > div > div {
   padding: 20px;
-  background-color: #E0E1DD;
+  background-color: #e0e1dd;
 }
 .Cart > div:last-of-type > div > div:nth-last-child(2) {
   display: grid;
@@ -956,7 +1011,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -972,37 +1027,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .ConfirmOrder > div > h1::before {
@@ -1017,59 +1072,60 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.ConfirmOrder > div > h1::after, .ConfirmOrder > div > h1::before {
-  border: 7px solid #778DA9;
+.ConfirmOrder > div > h1::after,
+.ConfirmOrder > div > h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
 .ConfirmOrder > div:nth-of-type(2) > select {
-  border: 3px solid #0D1B2A;
+  border: 3px solid #0d1b2a;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #778DA9;
+  background-color: #778da9;
   font-weight: 600;
-  color: #0D1B2A;
+  color: #0d1b2a;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .ConfirmOrder > div:nth-of-type(2) > select:hover {
-  color: #778DA9;
-  background-color: #0D1B2A;
+  color: #778da9;
+  background-color: #0d1b2a;
 }
 .ConfirmOrder > div:nth-of-type(2) > select a {
   text-decoration: none;
@@ -1078,20 +1134,20 @@ body {
 }
 
 .ConfirmOrder > div:last-of-type > button {
-  border: 3px solid #778DA9;
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .ConfirmOrder > div:last-of-type > button:hover {
-  color: #0D1B2A;
-  background-color: #778DA9;
+  color: #0d1b2a;
+  background-color: #778da9;
 }
 .ConfirmOrder > div:last-of-type > button a {
   text-decoration: none;
@@ -1100,10 +1156,10 @@ body {
 }
 
 .ConfirmOrder > div:nth-of-type(2) > h2 {
-  color: #415A77;
+  color: #415a77;
 }
 .ConfirmOrder > div:nth-of-type(2) > h2 > span {
-  color: #778DA9;
+  color: #778da9;
   padding-left: 10px;
 }
 .ConfirmOrder > div:nth-of-type(2) > h2 > span > svg {
@@ -1164,7 +1220,7 @@ body .MainHome > h1 {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -1180,37 +1236,37 @@ body .MainHome > h1::after {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 body .MainHome > h1::before {
@@ -1225,53 +1281,56 @@ body .MainHome > h1::before {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-body .MainHome > h1::after, body .MainHome > h1::before {
-  border: 7px solid #778DA9;
+body .MainHome > h1::after,
+body .MainHome > h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
-body .ANavbar > div h3, body aside ul li {
+body .ANavbar > div h3,
+body aside ul li {
   font-size: x-large;
   cursor: pointer;
   font-weight: 600;
-  color: #1B263B;
+  color: #1b263b;
   transition: 1s;
 }
-body .ANavbar > div h3:hover, body aside ul li:hover {
-  color: #0D1B2A;
+body .ANavbar > div h3:hover,
+body aside ul li:hover {
+  color: #0d1b2a;
 }
 
 @media (min-width: 1200px) {
@@ -1370,7 +1429,7 @@ body .ANavbar > div h3:hover, body aside ul li:hover {
   }
 }
 body .ANavbar {
-  background-color: #E0E1DD;
+  background-color: #e0e1dd;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -1396,7 +1455,7 @@ body .ANavbar > div:last-of-type {
   justify-content: center;
 }
 body aside {
-  background-color: #E0E1DD;
+  background-color: #e0e1dd;
 }
 body aside ul {
   list-style: none;
@@ -1437,80 +1496,80 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 @keyframes CycleLoopBefore {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 nav {
   display: grid;
   align-content: center;
-  background-color: #E0E1DD;
+  background-color: #e0e1dd;
   justify-content: space-around;
   justify-items: center;
 }
@@ -1579,14 +1638,14 @@ nav > div:last-of-type {
 nav > div > h1 {
   margin: 0;
   font-size: 40px;
-  color: #0D1B2A;
+  color: #0d1b2a;
 }
 nav > div > h1 a {
   text-decoration: none;
 }
 nav > div > h1 span {
   font-size: 30px;
-  color: #415A77;
+  color: #415a77;
 }
 nav > div ul {
   display: flex;
@@ -1601,7 +1660,8 @@ nav > div ul li {
 nav > div ul li span {
   font-size: x-large;
 }
-nav > div ul li span i, nav > div ul li span p {
+nav > div ul li span i,
+nav > div ul li span p {
   display: inline-block;
 }
 nav > div ul li span p {
@@ -1613,14 +1673,15 @@ nav > div ul li a {
   text-decoration: none;
   font-size: x-large;
   font-weight: 600;
-  color: #415A77;
+  color: #415a77;
   transition: 1s;
 }
 nav > div ul li svg {
   transition: 1s;
 }
-nav > div ul li:hover a, nav > div ul li:hover svg {
-  color: #778DA9;
+nav > div ul li:hover a,
+nav > div ul li:hover svg {
+  color: #778da9;
 }
 
 .Show {
@@ -1631,7 +1692,7 @@ footer {
   display: grid;
   padding: 20px;
   align-content: center;
-  background-color: #E0E1DD;
+  background-color: #e0e1dd;
   justify-content: space-around;
   justify-items: center;
   gap: 20px;
@@ -1677,7 +1738,7 @@ footer > div:first-of-type h1 a {
   text-decoration: none;
 }
 footer > div:first-of-type h1 span {
-  color: #415A77;
+  color: #415a77;
 }
 footer > div ul {
   list-style: none;
@@ -1689,11 +1750,11 @@ footer > div ul li a {
   text-decoration: none;
   font-size: x-large;
   font-weight: 600;
-  color: #415A77;
+  color: #415a77;
   transition: 1s;
 }
 footer > div ul li:hover a {
-  color: #778DA9;
+  color: #778da9;
 }
 footer > div:nth-of-type(4) img {
   width: 75px;
@@ -1713,10 +1774,10 @@ footer > div:nth-of-type(4) ul li a {
 footer > div:last-of-type {
   font-size: large;
   font-weight: 700;
-  color: #778DA9;
+  color: #778da9;
 }
 footer > div:last-of-type span {
-  color: #0D1B2A;
+  color: #0d1b2a;
 }
 * {
   box-sizing: border-box;
@@ -1734,7 +1795,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -1750,37 +1811,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .Home > h1::before {
@@ -1795,126 +1856,141 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.Home > h1::after, .Home > h1::before {
-  border: 7px solid #778DA9;
+.Home > h1::after,
+.Home > h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
-header > button, .Home.MostSoldBooks > div > div > div > button:first-of-type {
-  border: 3px solid #0D1B2A;
+header > button,
+.Home.MostSoldBooks > div > div > div > button:first-of-type {
+  border: 3px solid #0d1b2a;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #778DA9;
+  background-color: #778da9;
   font-weight: 600;
-  color: #0D1B2A;
+  color: #0d1b2a;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
-header > button:hover, .Home.MostSoldBooks > div > div > div > button:hover:first-of-type {
-  color: #778DA9;
-  background-color: #0D1B2A;
+header > button:hover,
+.Home.MostSoldBooks > div > div > div > button:hover:first-of-type {
+  color: #778da9;
+  background-color: #0d1b2a;
 }
-header > button a, .Home.MostSoldBooks > div > div > div > button:first-of-type a {
+header > button a,
+.Home.MostSoldBooks > div > div > div > button:first-of-type a {
   text-decoration: none;
   color: inherit;
   transition: inherit;
 }
 
-.Home.MostSoldBooks > div > div > div > button:last-of-type, .Home.ContactUs > div > div form input:last-of-type {
-  border: 3px solid #778DA9;
+.Home.MostSoldBooks > div > div > div > button:last-of-type,
+.Home.ContactUs > div > div form input:last-of-type {
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
-.Home.MostSoldBooks > div > div > div > button:hover:last-of-type, .Home.ContactUs > div > div form input:hover:last-of-type {
-  color: #0D1B2A;
-  background-color: #778DA9;
+.Home.MostSoldBooks > div > div > div > button:hover:last-of-type,
+.Home.ContactUs > div > div form input:hover:last-of-type {
+  color: #0d1b2a;
+  background-color: #778da9;
 }
-.Home.MostSoldBooks > div > div > div > button:last-of-type a, .Home.ContactUs > div > div form input:last-of-type a {
+.Home.MostSoldBooks > div > div > div > button:last-of-type a,
+.Home.ContactUs > div > div form input:last-of-type a {
   text-decoration: none;
   color: inherit;
   transition: inherit;
 }
 
-.Home.Services > div > div > span, .Home.MostPopulerWriters > div > div > span, .Home.Team > div > div > span, .Home.Stats > div > div > span {
+.Home.Services > div > div > span,
+.Home.MostPopulerWriters > div > div > span,
+.Home.Team > div > div > span,
+.Home.Stats > div > div > span {
   font-size: large;
   font-weight: 400;
   line-height: 1.5;
-  color: #778DA9;
+  color: #778da9;
 }
 
-.Home.Services > div > div > h3, .Home.MostPopulerWriters > div > div > h3, .Home.Team > div > div > h3, .Home.Stats > div > div > h3 {
+.Home.Services > div > div > h3,
+.Home.MostPopulerWriters > div > div > h3,
+.Home.Team > div > div > h3,
+.Home.Stats > div > div > h3 {
   font-size: xx-large;
   font-weight: 600;
-  color: #1B263B;
+  color: #1b263b;
 }
 
-.Home.ContactUs > div > div form input:not([type=checkbox]), .Home.ContactUs > div > div form textarea {
+.Home.ContactUs > div > div form input:not([type="checkbox"]),
+.Home.ContactUs > div > div form textarea {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: 60%;
   margin: 80px 20%;
 }
-.Home.ContactUs > div > div form input:focus:not([type=checkbox]), .Home.ContactUs > div > div form textarea:focus {
+.Home.ContactUs > div > div form input:focus:not([type="checkbox"]),
+.Home.ContactUs > div > div form textarea:focus {
   border: none;
 }
 
-.Home.ContactUs > div > div form input[type=submit] {
+.Home.ContactUs > div > div form input[type="submit"] {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: fit-content;
 }
 
 .Home.MostSoldBooks > div > div > div > h2 {
-  color: #415A77;
+  color: #415a77;
 }
 .Home.MostSoldBooks > div > div > div > h2 > span {
-  color: #778DA9;
+  color: #778da9;
   padding-left: 10px;
 }
 .Home.MostSoldBooks > div > div > div > h2 > span > svg {
@@ -1935,7 +2011,7 @@ header > h1 {
   font-weight: 600;
   text-transform: uppercase;
   padding: 50px;
-  color: #0D1B2A;
+  color: #0d1b2a;
 }
 @media (min-width: 1200px) {
   header > h1 {
@@ -1982,19 +2058,21 @@ header > button {
   content: "R";
   right: 20px;
 }
-.Home:not(.Home.Stats, .Home.ContactUs, .Home.AboutUs)::after, .Home:not(.Home.Stats, .Home.ContactUs, .Home.AboutUs)::before {
+.Home:not(.Home.Stats, .Home.ContactUs, .Home.AboutUs)::after,
+.Home:not(.Home.Stats, .Home.ContactUs, .Home.AboutUs)::before {
   position: absolute;
   top: 50%;
-  color: #778DA9;
+  color: #778da9;
   font-size: 50px;
   transition: 1s;
   cursor: pointer;
 }
-.Home:not(.Home.Stats, .Home.ContactUs, .Home.AboutUs)::after:hover, .Home:not(.Home.Stats, .Home.ContactUs, .Home.AboutUs)::before:hover {
-  color: #E0E1DD;
+.Home:not(.Home.Stats, .Home.ContactUs, .Home.AboutUs)::after:hover,
+.Home:not(.Home.Stats, .Home.ContactUs, .Home.AboutUs)::before:hover {
+  color: #e0e1dd;
 }
 .Home.Services {
-  background-color: #E0E1DD;
+  background-color: #e0e1dd;
 }
 .Home.Services > div {
   display: grid;
@@ -2022,7 +2100,7 @@ header > button {
   }
 }
 .Home.MostSoldBooks {
-  background-color: #1B263B;
+  background-color: #1b263b;
 }
 .Home.MostSoldBooks > div {
   display: grid;
@@ -2050,7 +2128,7 @@ header > button {
   }
 }
 .Home.MostSoldBooks > div > div {
-  border: 3px solid #E0E1DD;
+  border: 3px solid #e0e1dd;
   padding: 10px;
   border-radius: 5px;
   margin: 20px;
@@ -2071,7 +2149,7 @@ header > button {
   float: left;
 }
 .Home.MostPopulerWriters {
-  background-color: #E0E1DD;
+  background-color: #e0e1dd;
 }
 .Home.MostPopulerWriters > div {
   display: grid;
@@ -2104,7 +2182,7 @@ header > button {
   border-radius: 100%;
 }
 .Home.AboutUs {
-  background-color: #1B263B;
+  background-color: #1b263b;
 }
 .Home.AboutUs > div {
   display: grid;
@@ -2132,7 +2210,7 @@ header > button {
 }
 .Home.AboutUs > div > div {
   font-size: xx-large;
-  color: #415A77;
+  color: #415a77;
   font-weight: 600;
   padding: 50px;
 }
@@ -2141,7 +2219,7 @@ header > button {
   height: 100%;
 }
 .Home.Team {
-  background-color: #E0E1DD;
+  background-color: #e0e1dd;
 }
 .Home.Team > div {
   display: grid;
@@ -2174,10 +2252,10 @@ header > button {
   border-radius: 100%;
 }
 .Home.Team > div > div > h3 {
-  color: #778DA9;
+  color: #778da9;
 }
 .Home.Stats {
-  background-color: #415A77;
+  background-color: #415a77;
 }
 .Home.Stats > div {
   display: grid;
@@ -2211,7 +2289,7 @@ header > button {
   line-height: 0;
 }
 .Home.ContactUs {
-  background-color: #1B263B;
+  background-color: #1b263b;
 }
 .Home.ContactUs > div {
   display: grid;
@@ -2241,16 +2319,17 @@ header > button {
   width: 100%;
   height: 100%;
 }
-.Home.ContactUs > div > div form input:not([type=checkbox]) {
+.Home.ContactUs > div > div form input:not([type="checkbox"]) {
   display: block;
 }
-.Home.ContactUs > div > div form input[type=submit] {
+.Home.ContactUs > div > div form input[type="submit"] {
   width: fit-content;
 }
 .Home.ContactUs > div > div form textarea {
   display: block;
 }
-.Home.ContactUs > div > div form input, .Home.ContactUs > div > div form textarea {
+.Home.ContactUs > div > div form input,
+.Home.ContactUs > div > div form textarea {
   border-radius: 10px;
   padding: 10px;
 }
@@ -2270,7 +2349,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -2286,37 +2365,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .Library > div:first-of-type > div > h1::before {
@@ -2331,93 +2410,115 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.Library > div:first-of-type > div > h1::after, .Library > div:first-of-type > div > h1::before {
-  border: 7px solid #778DA9;
+.Library > div:first-of-type > div > h1::after,
+.Library > div:first-of-type > div > h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
-.Library > div:first-of-type > div > ul > li, .Library > div:first-of-type > div > select, .Library > div:not(.Library > div:first-of-type) > div > button:first-of-type {
-  border: 3px solid #0D1B2A;
+.Library > div:first-of-type > div > ul > li,
+.Library > div:first-of-type > div > select,
+.Library > div:not(.Library > div:first-of-type) > div > button:first-of-type {
+  border: 3px solid #0d1b2a;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #778DA9;
+  background-color: #778da9;
   font-weight: 600;
-  color: #0D1B2A;
+  color: #0d1b2a;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
-.Library > div:first-of-type > div > ul > li:hover, .Library > div:first-of-type > div > select:hover, .Library > div:not(.Library > div:first-of-type) > div > button:hover:first-of-type {
-  color: #778DA9;
-  background-color: #0D1B2A;
+.Library > div:first-of-type > div > ul > li:hover,
+.Library > div:first-of-type > div > select:hover,
+.Library
+  > div:not(.Library > div:first-of-type)
+  > div
+  > button:hover:first-of-type {
+  color: #778da9;
+  background-color: #0d1b2a;
 }
-.Library > div:first-of-type > div > ul > li a, .Library > div:first-of-type > div > select a, .Library > div:not(.Library > div:first-of-type) > div > button:first-of-type a {
+.Library > div:first-of-type > div > ul > li a,
+.Library > div:first-of-type > div > select a,
+.Library
+  > div:not(.Library > div:first-of-type)
+  > div
+  > button:first-of-type
+  a {
   text-decoration: none;
   color: inherit;
   transition: inherit;
 }
 
-.Library > div:first-of-type > div > ul > li:first-of-type, .Library > div:not(.Library > div:first-of-type) > div > button:last-of-type {
-  border: 3px solid #778DA9;
+.Library > div:first-of-type > div > ul > li:first-of-type,
+.Library > div:not(.Library > div:first-of-type) > div > button:last-of-type {
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
+  margin-left: 16%;
 }
-.Library > div:first-of-type > div > ul > li:hover:first-of-type, .Library > div:not(.Library > div:first-of-type) > div > button:hover:last-of-type {
-  color: #0D1B2A;
-  background-color: #778DA9;
+.Library > div:first-of-type > div > ul > li:hover:first-of-type,
+.Library
+  > div:not(.Library > div:first-of-type)
+  > div
+  > button:hover:last-of-type {
+  color: #0d1b2a;
+  background-color: #778da9;
 }
-.Library > div:first-of-type > div > ul > li:first-of-type a, .Library > div:not(.Library > div:first-of-type) > div > button:last-of-type a {
+.Library > div:first-of-type > div > ul > li:first-of-type a,
+.Library > div:not(.Library > div:first-of-type) > div > button:last-of-type a {
   text-decoration: none;
   color: inherit;
   transition: inherit;
+  margin-left: 16%;
 }
 
 .Library > div:not(.Library > div:first-of-type) > div > h2 {
-  color: #415A77;
+  color: #415a77;
 }
 .Library > div:not(.Library > div:first-of-type) > div > h2 > span {
-  color: #778DA9;
+  color: #778da9;
   padding-left: 10px;
 }
 .Library > div:not(.Library > div:first-of-type) > div > h2 > span > svg {
@@ -2517,7 +2618,7 @@ body {
   text-transform: capitalize;
 }
 .Library > div:not(.Library > div:first-of-type) {
-  border: 3px solid #E0E1DD;
+  border: 3px solid #e0e1dd;
   padding: 10px;
   border-radius: 5px;
   margin: 20px;
@@ -2531,12 +2632,7 @@ body {
 .Library > div:not(.Library > div:first-of-type) > div > button {
   padding: 10px !important;
 }
-.Library > div:not(.Library > div:first-of-type) > div > button:first-of-type {
-  float: right;
-}
-.Library > div:not(.Library > div:first-of-type) > div > button:last-of-type {
-  float: left;
-}
+
 * {
   box-sizing: border-box;
 }
@@ -2553,7 +2649,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -2569,37 +2665,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .Login > div > h1::before {
@@ -2614,59 +2710,60 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.Login > div > h1::after, .Login > div > h1::before {
-  border: 7px solid #778DA9;
+.Login > div > h1::after,
+.Login > div > h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
 .Login > div form input:last-of-type {
-  border: 3px solid #778DA9;
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .Login > div form input:hover:last-of-type {
-  color: #0D1B2A;
-  background-color: #778DA9;
+  color: #0d1b2a;
+  background-color: #778da9;
 }
 .Login > div form input:last-of-type a {
   text-decoration: none;
@@ -2674,23 +2771,23 @@ body {
   transition: inherit;
 }
 
-.Login > div form input:not([type=checkbox]) {
+.Login > div form input:not([type="checkbox"]) {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: 60%;
   margin: 80px 20%;
 }
-.Login > div form input:focus:not([type=checkbox]) {
+.Login > div form input:focus:not([type="checkbox"]) {
   border: none;
 }
 
-.Login > div form input[type=submit] {
+.Login > div form input[type="submit"] {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: fit-content;
 }
 
@@ -2739,10 +2836,10 @@ body {
   width: 100%;
   height: 100%;
 }
-.Login > div form input:not([type=checkbox]) {
+.Login > div form input:not([type="checkbox"]) {
   display: block;
 }
-.Login > div form input[type=submit] {
+.Login > div form input[type="submit"] {
   width: fit-content;
 }
 .Login > div form > div {
@@ -2769,7 +2866,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -2785,37 +2882,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .MakeOrder > ul > li:first-of-type h1::before {
@@ -2830,59 +2927,60 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.MakeOrder > ul > li:first-of-type h1::after, .MakeOrder > ul > li:first-of-type h1::before {
-  border: 7px solid #778DA9;
+.MakeOrder > ul > li:first-of-type h1::after,
+.MakeOrder > ul > li:first-of-type h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
 .MakeOrder > form input:last-of-type {
-  border: 3px solid #778DA9;
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .MakeOrder > form input:hover:last-of-type {
-  color: #0D1B2A;
-  background-color: #778DA9;
+  color: #0d1b2a;
+  background-color: #778da9;
 }
 .MakeOrder > form input:last-of-type a {
   text-decoration: none;
@@ -2890,31 +2988,31 @@ body {
   transition: inherit;
 }
 
-.MakeOrder > form input:not([type=checkbox]) {
+.MakeOrder > form input:not([type="checkbox"]) {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: 60%;
   margin: 80px 20%;
 }
-.MakeOrder > form input:focus:not([type=checkbox]) {
+.MakeOrder > form input:focus:not([type="checkbox"]) {
   border: none;
 }
 
-.MakeOrder > form input[type=submit] {
+.MakeOrder > form input[type="submit"] {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: fit-content;
 }
 
 .MakeOrder > ul > li > div > h2 {
-  color: #415A77;
+  color: #415a77;
 }
 .MakeOrder > ul > li > div > h2 > span {
-  color: #778DA9;
+  color: #778da9;
   padding-left: 10px;
 }
 .MakeOrder > ul > li > div > h2 > span > svg {
@@ -2990,10 +3088,10 @@ body {
 .MakeOrder > form {
   text-align: center;
 }
-.MakeOrder > form input:not([type=checkbox]) {
+.MakeOrder > form input:not([type="checkbox"]) {
   display: block;
 }
-.MakeOrder > form input[type=submit] {
+.MakeOrder > form input[type="submit"] {
   width: fit-content;
 }
 .MakeOrder > form input:last-of-type {
@@ -3007,7 +3105,7 @@ body {
 .MakeOrder > form > div > label {
   width: 50%;
   font-size: x-large;
-  color: #415A77;
+  color: #415a77;
   font-weight: 800;
 }
 .MakeOrder > form > div > input {
@@ -3031,7 +3129,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -3047,37 +3145,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .Register > div:first-of-type h1::before {
@@ -3092,59 +3190,60 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.Register > div:first-of-type h1::after, .Register > div:first-of-type h1::before {
-  border: 7px solid #778DA9;
+.Register > div:first-of-type h1::after,
+.Register > div:first-of-type h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
 .Register > div form > input:last-of-type {
-  border: 3px solid #778DA9;
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .Register > div form > input:hover:last-of-type {
-  color: #0D1B2A;
-  background-color: #778DA9;
+  color: #0d1b2a;
+  background-color: #778da9;
 }
 .Register > div form > input:last-of-type a {
   text-decoration: none;
@@ -3152,23 +3251,23 @@ body {
   transition: inherit;
 }
 
-.Register > div form > input:not([type=checkbox]) {
+.Register > div form > input:not([type="checkbox"]) {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: 60%;
   margin: 80px 20%;
 }
-.Register > div form > input:focus:not([type=checkbox]) {
+.Register > div form > input:focus:not([type="checkbox"]) {
   border: none;
 }
 
-.Register > div form > input[type=submit] {
+.Register > div form > input[type="submit"] {
   font-size: large;
   border: none;
   height: 50px;
-  border-bottom: 2px solid #0D1B2A;
+  border-bottom: 2px solid #0d1b2a;
   width: fit-content;
 }
 
@@ -3202,10 +3301,10 @@ body {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.Register > div form > input:not([type=checkbox]) {
+.Register > div form > input:not([type="checkbox"]) {
   display: block;
 }
-.Register > div form > input[type=submit] {
+.Register > div form > input[type="submit"] {
   width: fit-content;
 }
 .Register > div form > div {
@@ -3229,91 +3328,91 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 @keyframes CycleLoopBefore {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .ShowBook > div > button {
-  border: 3px solid #778DA9;
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .ShowBook > div > button:hover {
-  color: #0D1B2A;
-  background-color: #778DA9;
+  color: #0d1b2a;
+  background-color: #778da9;
 }
 .ShowBook > div > button a {
   text-decoration: none;
@@ -3322,10 +3421,10 @@ body {
 }
 
 .ShowBook > div > h2 {
-  color: #415A77;
+  color: #415a77;
 }
 .ShowBook > div > h2 > span {
-  color: #778DA9;
+  color: #778da9;
   padding-left: 10px;
 }
 .ShowBook > div > h2 > span > svg {
@@ -3381,7 +3480,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -3397,37 +3496,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .ShowOrder > ul > li:first-of-type h1::before {
@@ -3442,52 +3541,56 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.ShowOrder > ul > li:first-of-type h1::after, .ShowOrder > ul > li:first-of-type h1::before {
-  border: 7px solid #778DA9;
+.ShowOrder > ul > li:first-of-type h1::after,
+.ShowOrder > ul > li:first-of-type h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
-.ShowOrder > ul > li > div > h2, .ShowOrder > div > h2 {
-  color: #415A77;
+.ShowOrder > ul > li > div > h2,
+.ShowOrder > div > h2 {
+  color: #415a77;
 }
-.ShowOrder > ul > li > div > h2 > span, .ShowOrder > div > h2 > span {
-  color: #778DA9;
+.ShowOrder > ul > li > div > h2 > span,
+.ShowOrder > div > h2 > span {
+  color: #778da9;
   padding-left: 10px;
 }
-.ShowOrder > ul > li > div > h2 > span > svg, .ShowOrder > div > h2 > span > svg {
+.ShowOrder > ul > li > div > h2 > span > svg,
+.ShowOrder > div > h2 > span > svg {
   margin-left: 5px;
 }
 
@@ -3597,7 +3700,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -3613,37 +3716,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .ShowOrders > div:first-of-type > h1::before {
@@ -3658,59 +3761,60 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.ShowOrders > div:first-of-type > h1::after, .ShowOrders > div:first-of-type > h1::before {
-  border: 7px solid #778DA9;
+.ShowOrders > div:first-of-type > h1::after,
+.ShowOrders > div:first-of-type > h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
 .ShowOrders > div > div button {
-  border: 3px solid #0D1B2A;
+  border: 3px solid #0d1b2a;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #778DA9;
+  background-color: #778da9;
   font-weight: 600;
-  color: #0D1B2A;
+  color: #0d1b2a;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
 .ShowOrders > div > div button:hover {
-  color: #778DA9;
-  background-color: #0D1B2A;
+  color: #778da9;
+  background-color: #0d1b2a;
 }
 .ShowOrders > div > div button a {
   text-decoration: none;
@@ -3719,10 +3823,10 @@ body {
 }
 
 .ShowOrders > div > div > h2 {
-  color: #415A77;
+  color: #415a77;
 }
 .ShowOrders > div > div > h2 > span {
-  color: #778DA9;
+  color: #778da9;
   padding-left: 10px;
 }
 .ShowOrders > div > div > h2 > span > svg {
@@ -3758,7 +3862,7 @@ body {
   }
 }
 .ShowOrders > div:not(.ShowOrders > div:first-of-type) {
-  background-color: #E0E1DD;
+  background-color: #e0e1dd;
   margin: 10px auto;
 }
 .ShowOrders > div > div {
@@ -3807,7 +3911,7 @@ body {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
-  color: #778DA9;
+  color: #778da9;
   position: relative;
   width: fit-content;
 }
@@ -3823,37 +3927,37 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 .AdminShowUsers > div:first-of-type > h1::before {
@@ -3868,74 +3972,94 @@ body {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
-.AdminShowUsers > div:first-of-type > h1::after, .AdminShowUsers > div:first-of-type > h1::before {
-  border: 7px solid #778DA9;
+.AdminShowUsers > div:first-of-type > h1::after,
+.AdminShowUsers > div:first-of-type > h1::before {
+  border: 7px solid #778da9;
   border-radius: 100%;
 }
 
 .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div > button {
-  border: 3px solid #778DA9;
+  border: 3px solid #778da9;
   border-radius: 5px;
   padding: 15px 30px;
-  background-color: #0D1B2A;
+  background-color: #0d1b2a;
   font-weight: 600;
-  color: #778DA9;
+  color: #778da9;
   text-transform: uppercase;
   transition: 1s;
   width: fit-content;
   font-size: x-large;
 }
-.AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div > button:hover {
-  color: #0D1B2A;
-  background-color: #778DA9;
+.AdminShowUsers
+  > div:not(.AdminShowUsers > div:first-of-type)
+  > div
+  > button:hover {
+  color: #0d1b2a;
+  background-color: #778da9;
 }
-.AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div > button a {
+.AdminShowUsers
+  > div:not(.AdminShowUsers > div:first-of-type)
+  > div
+  > button
+  a {
   text-decoration: none;
   color: inherit;
   transition: inherit;
 }
 
-.AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:nth-last-child(2) > h2 {
-  color: #415A77;
+.AdminShowUsers
+  > div:not(.AdminShowUsers > div:first-of-type)
+  > div:nth-last-child(2)
+  > h2 {
+  color: #415a77;
 }
-.AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:nth-last-child(2) > h2 > span {
-  color: #778DA9;
+.AdminShowUsers
+  > div:not(.AdminShowUsers > div:first-of-type)
+  > div:nth-last-child(2)
+  > h2
+  > span {
+  color: #778da9;
   padding-left: 10px;
 }
-.AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:nth-last-child(2) > h2 > span > svg {
+.AdminShowUsers
+  > div:not(.AdminShowUsers > div:first-of-type)
+  > div:nth-last-child(2)
+  > h2
+  > span
+  > svg {
   margin-left: 5px;
 }
 
@@ -4000,53 +4124,73 @@ body {
 }
 .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div {
   padding: 20px;
-  background-color: #1B263B;
+  background-color: #1b263b;
 }
-.AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:nth-last-child(2) {
+.AdminShowUsers
+  > div:not(.AdminShowUsers > div:first-of-type)
+  > div:nth-last-child(2) {
   display: grid;
 }
 @media (min-width: 1200px) {
-  .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:nth-last-child(2) {
+  .AdminShowUsers
+    > div:not(.AdminShowUsers > div:first-of-type)
+    > div:nth-last-child(2) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 990px) and (max-width: 1199px) {
-  .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:nth-last-child(2) {
+  .AdminShowUsers
+    > div:not(.AdminShowUsers > div:first-of-type)
+    > div:nth-last-child(2) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 740px) and (max-width: 989px) {
-  .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:nth-last-child(2) {
+  .AdminShowUsers
+    > div:not(.AdminShowUsers > div:first-of-type)
+    > div:nth-last-child(2) {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 739px) {
-  .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:nth-last-child(2) {
+  .AdminShowUsers
+    > div:not(.AdminShowUsers > div:first-of-type)
+    > div:nth-last-child(2) {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:last-of-type {
+.AdminShowUsers
+  > div:not(.AdminShowUsers > div:first-of-type)
+  > div:last-of-type {
   display: grid;
   justify-items: center;
   align-items: center;
 }
 @media (min-width: 1200px) {
-  .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:last-of-type {
+  .AdminShowUsers
+    > div:not(.AdminShowUsers > div:first-of-type)
+    > div:last-of-type {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 990px) and (max-width: 1199px) {
-  .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:last-of-type {
+  .AdminShowUsers
+    > div:not(.AdminShowUsers > div:first-of-type)
+    > div:last-of-type {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 740px) and (max-width: 989px) {
-  .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:last-of-type {
+  .AdminShowUsers
+    > div:not(.AdminShowUsers > div:first-of-type)
+    > div:last-of-type {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 739px) {
-  .AdminShowUsers > div:not(.AdminShowUsers > div:first-of-type) > div:last-of-type {
+  .AdminShowUsers
+    > div:not(.AdminShowUsers > div:first-of-type)
+    > div:last-of-type {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -4066,74 +4210,74 @@ body {
   0% {
     top: -15px;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     top: -15px;
     left: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     top: -15px;
     left: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     top: -15px;
     left: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     top: -15px;
     left: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     top: 50% px;
     left: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     top: 100%;
     left: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 @keyframes CycleLoopBefore {
   0% {
     bottom: -15px;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
   20% {
     bottom: -15px;
     right: 50%;
-    border-color: #1B263B;
+    border-color: #1b263b;
   }
   40% {
     bottom: -15px;
     right: 100%;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   60% {
     bottom: -15px;
     right: 50%;
-    border-color: #778DA9;
+    border-color: #778da9;
   }
   80% {
     bottom: -15px;
     right: -15px;
-    border-color: #E0E1DD;
+    border-color: #e0e1dd;
   }
   90% {
     bottom: 50%;
     right: -15px;
-    border-color: #415A77;
+    border-color: #415a77;
   }
   100% {
     bottom: 100%;
     right: -15px;
-    border-color: #0D1B2A;
+    border-color: #0d1b2a;
   }
 }
 /*# sourceMappingURL=../Css_Maps/main.css.map */

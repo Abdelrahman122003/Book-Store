@@ -1,9 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html len="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../../Css/all.css" />
+    <link rel="stylesheet" href="../../Css/all.min.css" />
+    <link rel="stylesheet" href="../../Css/main.css" />
+    <title>Profile</title>
   </head>
-  <body></body>
+  <body>
+    <nav>
+      <div>
+        <!-- <img src="../../Images/X.jpg" alt="" /> -->
+        <h1><a href="../Fixed/Home.html">X </a><span>Library</span></h1>
+      </div>
+      <div id="NavBar">
+        <ul>
+          <li><a href="../Fixed/Library.html">Library</a></li>
+          <li><a href="../Fixed/Home.html#ContactUs">Contact</a></li>
+          <li><a href="../Fixed/Home.html#AboutUs">About</a></li>
+          <li><a href="../Fixed/Home.html#Team">Team</a></li>
+          <li><a href="../Fixed/Home.html#Services">Services</a></li>
+          <li><a href="../Fixed/Home.html#Writers">Writers</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li id="Icon"><i class="fa-solid fa-2x fa-bars"></i></li>
+          <li>
+            <a href=""><i class="fa-brands fa-1x fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-1x fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-1x fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-envelope"></i></a>
+          </li>
+          <li>
+            <span id="LogInCont"
+              ><i class="fa-solid fa-right-to-bracket" id="LogInIcon"></i>
+              <p><a href="../Fixed/Login.html" id="LogIn">Login</a></p></span
+            >
+          </li>
+          <li>
+            <span id="SignInCont"
+              ><i class="fa-regular fa-user" id="SignInIcon"></i>
+              <p>
+                <a href="../Reader/Register.html" id="SignIn">SignIn</a>
+              </p></span
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="Register">
+      <div>
+        <h1>Account Data</h1>
+      </div>
+      <div>
+        <form action="">
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            id="user"
+            disabled
+          />
+          <input type="email" name="email" placeholder="Your Email" disabled />
+          <input
+            type="password"
+            name="oldPassword"
+            placeholder="Enter Old Password"
+            required
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter New Password"
+            required
+          />
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm The new Password"
+            required
+          />
+
+          <input type="submit" value="Register" />
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div>
+        <img src="../../Images/X.jpg" alt="" />
+        <h1><a href="../Fixed/Home.html">X </a><span>Library</span></h1>
+      </div>
+      <div>
+        <ul>
+          <li><a href="../Fixed/Home.html#Team">Team</a></li>
+          <li><a href="../Fixed/Home.html#Services">Services</a></li>
+          <li><a href="../Fixed/Home.html#ContactUs">Contact Us</a></li>
+          <li><a href="../Fixed/Home.html#AboutUs">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><a href="../Fixed/Home.html">Home</a></li>
+          <li><a href="../Fixed/Library.html">Library</a></li>
+          <li><a href="../Fixed/Home.html#Team">Our Team </a></li>
+          <li><a href="../Fixed/Home.html#Writers">Popular Writers </a></li>
+        </ul>
+      </div>
+      <div>
+        <img src="../../Images/Book1.jpg" alt="" /><img
+          src="../../Images/Book2.jpg"
+          alt=""
+        /><img src="../../Images/Book3.jpeg" alt="" /><img
+          src="../../Images/Book4.png"
+          alt=""
+        />
+        <ul>
+          <li>
+            <a href=""><i class="fa-brands fa-1x fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-1x fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-1x fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-solid fa-1x fa-envelope"> </i></a>
+          </li>
+        </ul>
+      </div>
+      <div>CopyRights Reseved @ 2024 by <span>E.Ahmed Osama</span></div>
+    </footer>
+    <script src="../../Js/all.js"></script>
+    <script src="../../Js/all.min.js"></script>
+    <script src="../../Js/main.js"></script>
+
+    <script>
+      async function submitHandler() {
+        const token = localStorage.getItem("token");
+
+        // Check if token exists
+        if (!token) {
+          console.error("Token is missing");
+          return;
+        }
+        // console.log("token in login : ", token);
+
+        // Retrieve the user object from localStorage
+        const user = JSON.parse(localStorage.getItem("user"));
+        console.log("user : ", user);
+      }
+
+      document.addEventListener("DOMContentLoaded", submitHandler);
+    </script>
+    <!-- <script>
+      async function register(event) {
+        event.preventDefault();
+        const username = document.querySelector('input[name="username"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const password = document.querySelector('input[name="password"]').value;
+        const confirmPassword = document.querySelector(
+          'input[name="confirmPassword"]'
+        ).value;
+        const response = await fetch(
+          "http://127.0.0.1:2003/api/customers/register",
+          {
+            method: "POST",
+            credentials: "same-origin",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username,
+              password,
+              email,
+              confirmPassword,
+            }),
+          }
+        ).catch((err) => {
+          console.log("error ", err);
+        });
+
+        const { message, status } = await response.json();
+        if (!response.ok) {
+          // console.log("entered");
+          ErrorMessage(response.status, message);
+          return;
+        }
+
+        window.location.href = "../Fixed/Login.html";
+      }
+
+      document.querySelector("form").addEventListener("submit", register);
+    </script> -->
+  </body>
 </html>

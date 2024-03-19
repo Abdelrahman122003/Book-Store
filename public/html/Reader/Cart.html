@@ -59,8 +59,9 @@
       <div>
         <h1>Selected Products</h1>
       </div>
-      <div>
-        <div>
+
+      <div id="Cart">
+        <!-- <div>
           <img src="../../Images/Book3.jpeg" alt="" />
           <div>
             <h2>Book Name:<span>Don't Try</span></h2>
@@ -83,9 +84,9 @@
               ><i class="fa-solid fa-1x fa-minus"></i>
             </div>
             <button>Cancel</button>
-            <button>Replace</button>
           </div>
         </div>
+
         <div>
           <img src="../../Images/Book2.jpg" alt="" />
           <div>
@@ -112,6 +113,7 @@
             <button>Replace</button>
           </div>
         </div>
+
         <div>
           <img src="../../Images/Book1.jpg" alt="" />
           <div>
@@ -137,9 +139,11 @@
             <button>Cancel</button>
             <button>Replace</button>
           </div>
-        </div>
+        </div> -->
       </div>
-      <button><a href="../Reader/MakeOrder.html">Make Order</a></button>
+      <button id="MakeOrder">
+        <a href="../Reader/MakeOrder.html">Make Order</a>
+      </button>
     </section>
     <footer>
       <div>
@@ -190,6 +194,19 @@
     <script src="../../Js/all.js"></script>
     <script src="../../Js/all.min.js"></script>
     <script src="../../Js/main.js"></script>
+    <script src="../../Js/Cart.js"></script>
+    <script>
+      function showCart() {
+        // Retrieve the cart from localStorage
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        for (let i = 0; i < cart.length; i++) {
+          let item = JSON.parse(cart[i]);
+          // console.log(item);
+          MakeCart(item, document.getElementById("Cart"));
+        }
+      }
+      document.addEventListener("DOMContentLoaded", showCart);
+    </script>
     <!-- here -->
   </body>
 </html>
