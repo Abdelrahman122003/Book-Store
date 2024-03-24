@@ -8,7 +8,7 @@ const bookSchema = mongoose.Schema({
   pages: { type: Number, required: true },
   category: { type: String, required: true },
   rate: { type: Number, default: 1 },
-  numberOfPayments: { type: Number, default: 0 },
+  requiredQuantity: { type: Number, default: 1 },
 });
 
 const Book = mongoose.model("book", bookSchema);

@@ -20,4 +20,8 @@ routerOrder
   .route("/cancelOrder/:orderId")
   .delete(authController.restrictTo("Customer"), controllerOrder.deleteOrder);
 
+routerOrder
+  .route("/getAllOrdersForMe")
+  .get(authController.protect, controllerOrder.showOrdersForCustomer);
+
 module.exports = routerOrder;

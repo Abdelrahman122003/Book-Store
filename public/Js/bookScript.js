@@ -1,12 +1,3 @@
-function returnAvailNumbers(id, data) {
-  for (var i = 0; i < data.books.length; i++) {
-    return data.books[i].ISBN === id ? data.books[i].amount : -1;
-  }
-}
-function increase() {}
-
-function decrease() {}
-
 function CreateBook(data, Position, bookNumber) {
   // Create Html ELements
   let Container = document.createElement("div");
@@ -59,7 +50,7 @@ function CreateBook(data, Position, bookNumber) {
 }
 // localStorage.setItem("cart", JSON.stringify([]));
 
-function addToCart(bookData) {
+function addToCart(bookData, index) {
   // get cart from local storage
   let cart = JSON.parse(localStorage.getItem("cart"));
   let check = true;

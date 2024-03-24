@@ -42,5 +42,4 @@ routerBook
     authController.restrictTo("Admin", "Customer"),
     controllerBook.getBookByISBN
   );
-
 module.exports = routerBook;
