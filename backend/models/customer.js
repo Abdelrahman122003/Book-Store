@@ -40,7 +40,7 @@ const customerSchema = mongoose.Schema({
   active: {
     type: Boolean,
     default: true,
-    select: false,
+    // select: false,
   },
 });
 customerSchema.pre("save", async function (next) {

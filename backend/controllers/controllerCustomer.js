@@ -10,43 +10,6 @@ const filterObj = (obj, ...allowedFields) => {
   return newObj;
 };
 
-// add customer --> register
-const addCustomer = async (req, res, next) => {
-  console.log("enter add customer");
-  const { username, password, email, confirmPassword } = req.body;
-  console.log(username, " ", password, " ", confirmPassword);
-  if (!username || !password || !email || !confirmPassword) {
-    res.status(400).json({
-      status: "fail",
-      message: "Missing required fields.",
-    });
-  }
-  const customers = await Customer.find({
-    $or: [{ username: username }, { email: email }],
-  });
-  console.log(customers);
-  if (customers.length !== 0) {
-    return res.status(400).json({
-      status: "fail",
-      message: "This email or username is used before!",
-      data: { customers },
-    });
-  }
-  if (password !== confirmPassword) {
-    return res.status(400).json({
-      status: "fail",
-      message: "Passwords are not the same(Password, Confirm Password)!",
-    });
-  }
-  const newCustomer = await Customer.create(req.body);
-  await newCustomer.save();
-  res.status(201).json({
-    status: "success",
-    message: "Customer created successfully",
-    data: { newCustomer },
-  });
-};
-
 // show Customers
 const showCustomers = async (req, res, next) => {
   const Customers = await Customer.find();
@@ -56,42 +19,6 @@ const showCustomers = async (req, res, next) => {
     data: { Customers },
   });
 };
-
-// edit customer
-const editCustomer = catchAsync(async (req, res, next) => {
-  //1)not allow to update password, passwordConfirm and role.
-  if (req.body.password || req.body.confirmPassword) {
-    return next(
-      new AppError(
-        "This route is not for password updates. Please use /updateMyPassword",
-        400
-      )
-    );
-  }
-  if (req.body.role) {
-    return next(new AppError("You can not change your role.", 400));
-  }
-  // we can not use save method because it is require (password and passwordConfirm)
-
-  // 2)filtered out unwanted fields names that are not allowed to be updated
-  const filteredBody = filterObj(req.body, "username", "email");
-
-  //3)update user document
-  const updatedCustomer = await Customer.findByIdAndUpdate(
-    req.user.id,
-    filteredBody,
-    {
-      new: true,
-      runValidators: true,
-    }
-  );
-  //   200 --> okay
-  res.status(200).json({
-    status: "success",
-    message: "Customer updated successfully",
-    data: { user: updatedCustomer },
-  });
-});
 
 // get customer --> with username
 const getCustomerByUsername = async (req, res, next) => {
@@ -110,20 +37,24 @@ const getCustomerByUsername = async (req, res, next) => {
 };
 
 const deleteMe = catchAsync(async (req, res, next) => {
-  await Customer.findByIdAndUpdate(req.user.id, {
+  const customer = await Customer.findByIdAndUpdate(req.user.id, {
     active: false,
   });
 
-  res.status(204).json({
+  if (customer.active === false) {
+    res.status(200).json({
+      message: "You have already been deleted before.",
+    });
+  }
+  console.log("customer from con", customer);
+  res.status(200).json({
     status: "success",
-    data: null,
+    message: "You have been successfully deleted.",
   });
 });
 
 module.exports = {
-  addCustomer,
   showCustomers,
-  editCustomer,
   getCustomerByUsername,
   deleteMe,
 };
