@@ -13,15 +13,32 @@ routerOrder
 routerOrder
   .route("/showOrders")
   .get(
+    authController.protect,
     authController.restrictTo("Customer", "Admin"),
     controllerOrder.showOrders
   );
 routerOrder
   .route("/cancelOrder/:orderId")
-  .delete(authController.restrictTo("Customer"), controllerOrder.deleteOrder);
+  .delete(
+    authController.protect,
+    authController.restrictTo("Customer"),
+    controllerOrder.cancelOrder
+  );
 
 routerOrder
-  .route("/getAllOrdersForMe")
-  .get(authController.protect, controllerOrder.showOrdersForCustomer);
+  .route("/getAllCustomerOrders")
+  .get(
+    authController.protect,
+    authController.restrictTo("Customer"),
+    controllerOrder.showOrdersForCustomer
+  );
+
+routerOrder
+  .route("/getOrderById/:orderId")
+  .get(
+    authController.protect,
+    authController.restrictTo("Customer"),
+    controllerOrder.getOrderById
+  );
 
 module.exports = routerOrder;
